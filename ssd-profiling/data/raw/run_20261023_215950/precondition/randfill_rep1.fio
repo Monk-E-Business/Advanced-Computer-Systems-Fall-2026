@@ -1,0 +1,36 @@
+; -----------------------------------------------------------------------------
+; Preconditioning (after SNIA SSS-PTS practice):
+;   seqfill : write the whole span sequentially LOOPS times with 128KiB, QD32.
+;             Guarantees every LBA in the span is mapped (no "reads of never-
+;             written LBAs" that the controller answers without touching NAND)
+;             and puts the FTL into a known, sequentially-written state.
+;   randfill: then random 4KiB writes for IOSIZE bytes (e.g. 1-2x the span) to
+;             fragment the mapping and wake up garbage collection before any
+;             random-write measurement.
+; Run selectively with:  fio --section=seqfill precondition.fio
+; -----------------------------------------------------------------------------
+[global]
+filename=D\:/ssdtest/fio-scratch.bin
+cpus_allowed=2-5
+ioengine=windowsaio
+direct=1
+size=68719476736
+refill_buffers=1
+buffer_compress_percentage=0
+thread=1
+group_reporting=1
+
+[seqfill]
+rw=write
+bs=128k
+iodepth=32
+loops=1
+
+[randfill]
+stonewall
+rw=randwrite
+bs=4k
+iodepth=32
+norandommap=1
+randrepeat=0
+io_size=68719476736

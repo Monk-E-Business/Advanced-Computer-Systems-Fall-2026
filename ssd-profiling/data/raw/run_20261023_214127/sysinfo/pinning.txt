@@ -1,0 +1,1 @@
+fio pinned to (cpus_allowed): 2-5

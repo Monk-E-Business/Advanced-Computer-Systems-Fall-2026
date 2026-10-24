@@ -1,0 +1,12 @@
+kind=file
+full_path=D:\ssdtest\fio-scratch.bin
+volume=D:\
+counters=\\?\Volume{adc4f2f6-c71e-493e-b9f1-6686873e412f}
+fs=NTFS
+drive_type=fixed
+free=83785240576
+cluster_bytes=4096
+disk=0
+extents=1
+system_disk=1
+system_volume=0

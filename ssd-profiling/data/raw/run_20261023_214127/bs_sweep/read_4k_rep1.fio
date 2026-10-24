@@ -1,0 +1,49 @@
+; -----------------------------------------------------------------------------
+; Generic parameterized workload used by every sweep. All  are exported
+; by scripts/common.sh:run_fio and recorded in each run's .meta.json.
+;   RW        randread | randwrite | read | write | randrw | rw
+;   BS        block size (random offsets are aligned to BS: blockalign=bs default)
+;   QD        iodepth per job;  NJ = numjobs;  effective QD = QD * NJ
+;   SIZE      bytes each job may touch;  OFFSET start;  OFFINC per-job offset
+;             (sequential multi-job runs give each job its own disjoint stripe
+;             so the device really sees NJ sequential streams)
+;   DIRECT    1 = unbuffered I/O (Windows FILE_FLAG_NO_BUFFERING, Linux O_DIRECT):
+;             bypasses the OS file cache. 0 only in the misleading demos.
+;   FIO_FILENAME  target path; Windows drive colons escaped (D\:/ssdtest/...)
+;   FIO_CPUS  cpus_allowed list (CPU pinning, both platforms)
+; -----------------------------------------------------------------------------
+[global]
+filename=D\:/ssdtest/fio-scratch.bin
+cpus_allowed=2-5
+ioengine=windowsaio
+direct=1
+time_based=1
+runtime=2
+ramp_time=0
+group_reporting=1
+; random offsets drawn freshly each run (no repeated sequence across reps),
+; without a "random map" so the same LBA may be hit twice (true random)
+randrepeat=0
+norandommap=1
+random_generator=tausworthe64
+; data pattern: new random (incompressible) buffer contents on every submit
+refill_buffers=1
+buffer_compress_percentage=0
+; latency reporting: total latency (submit -> completion), fine percentiles
+lat_percentiles=1
+clat_percentiles=0
+percentile_list=1:5:10:25:50:75:90:95:99:99.5:99.9:99.99
+; drop cached pages of the file before the run (Linux; a no-op on Windows,
+; where the harness purges the standby list instead when it matters)
+invalidate=1
+thread=1
+
+[job]
+rw=read
+bs=4k
+iodepth=32
+numjobs=1
+rwmixread=50
+size=536870912
+offset=0
+offset_increment=0

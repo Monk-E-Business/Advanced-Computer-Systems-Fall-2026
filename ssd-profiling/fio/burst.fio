@@ -1,0 +1,30 @@
+; -----------------------------------------------------------------------------
+; Short, size-limited (not time-based) run for the NTFS "valid data length"
+; demo (misleading case D, Windows). Writes IOSIZE bytes of random 4KiB I/O.
+; On a file whose end-of-file was set without writing data, NTFS must
+; zero-fill everything between the file's valid data length and each new
+; write offset BEFORE that write completes: hidden device writes far larger
+; than what fio issues, plus enormous latency outliers.
+; -----------------------------------------------------------------------------
+[global]
+filename=${FIO_FILENAME}
+cpus_allowed=${FIO_CPUS}
+ioengine=${IOENGINE}
+direct=1
+size=${SIZE}
+io_size=${IOSIZE}
+norandommap=1
+randrepeat=0
+refill_buffers=1
+buffer_compress_percentage=${COMPRESS_PCT}
+lat_percentiles=1
+clat_percentiles=0
+percentile_list=50:95:99:99.9:99.99
+thread=1
+group_reporting=1
+
+[job]
+rw=${RW}
+bs=${BS}
+iodepth=${QD}
+numjobs=${NJ}

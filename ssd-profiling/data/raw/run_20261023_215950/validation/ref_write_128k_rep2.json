@@ -1,0 +1,1 @@
+{"tool": "ref_qd1", "mode": "write", "bs": 131072, "span": 68719476736, "ios": 152120, "elapsed_s": 30.024, "iops": 5066.5, "MBps": 664.08, "lat_mean_us": 197.305, "lat_p50_us": 61.500, "lat_p95_us": 92.400, "lat_p99_us": 820.200, "lat_p999_us": 29994.800, "lat_max_us": 105411.300}

@@ -1,0 +1,30 @@
+; -----------------------------------------------------------------------------
+; Short, size-limited (not time-based) run for the NTFS "valid data length"
+; demo (misleading case D, Windows). Writes IOSIZE bytes of random 4KiB I/O.
+; On a file whose end-of-file was set without writing data, NTFS must
+; zero-fill everything between the file's valid data length and each new
+; write offset BEFORE that write completes: hidden device writes far larger
+; than what fio issues, plus enormous latency outliers.
+; -----------------------------------------------------------------------------
+[global]
+filename=D\:/ssdtest/fio-scratch.bin
+cpus_allowed=2-5
+ioengine=windowsaio
+direct=1
+size=1073741824
+io_size=16777216
+norandommap=1
+randrepeat=0
+refill_buffers=1
+buffer_compress_percentage=0
+lat_percentiles=1
+clat_percentiles=0
+percentile_list=50:95:99:99.9:99.99
+thread=1
+group_reporting=1
+
+[job]
+rw=randwrite
+bs=4k
+iodepth=1
+numjobs=1

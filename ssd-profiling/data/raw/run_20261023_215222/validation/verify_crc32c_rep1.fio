@@ -1,0 +1,24 @@
+; -----------------------------------------------------------------------------
+; I/O-path correctness check: write a region with per-block crc32c checksums +
+; headers (offset, length, sequence), then read it back and verify. Proves the
+; direct-I/O path returns exactly what was written at the right offsets before
+; trusting any performance number. Uses 16777216 bytes at offset 0.
+; -----------------------------------------------------------------------------
+[global]
+filename=D\:/ssdtest/fio-scratch.bin
+cpus_allowed=2-5
+ioengine=windowsaio
+direct=1
+size=16777216
+thread=1
+
+[write-and-verify]
+rw=randwrite
+bs=4k
+iodepth=16
+verify=crc32c
+verify_fatal=1
+do_verify=1
+verify_backlog=0
+randrepeat=1
+verify_state_save=0

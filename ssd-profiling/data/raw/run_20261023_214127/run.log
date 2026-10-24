@@ -1,0 +1,121 @@
+[21:41:28] run run_20261023_214127  QUICK=1  target=D:/ssdtest/fio-scratch.bin
+[21:41:28] == sysinfo
+[21:41:29] collecting system info into /home/Brendan-NewPc/ssd-profiling/data/raw/run_20261023_214127/sysinfo
+{
+  "platform": "windows",
+  "target": "D:/ssdtest/fio-scratch.bin",
+  "target_kind": "file",
+  "span_bytes": 536870912,
+  "disk": "0",
+  "ioengine": "windowsaio",
+  "fio_pinning": "2-5",
+  "fio": "fio-3.43",
+  "gxx": "g++.exe (Rev4, Built by MSYS2 project) 16.2.0",
+  "os": "Microsoft Windows 11 Pro 10.0.26200 (build 26200)",
+  "cpu_model": "AMD Ryzen 5 3600 6-Core Processor",
+  "cpu_cores": 6,
+  "cpu_logical": 12,
+  "smt": "on",
+  "cpu_max_mhz": 3593,
+  "ram_bytes": 34287804416,
+  "model": "Samsung SSD 990 EVO Plus 4TB",
+  "firmware": "2B2QKXG7",
+  "bus": "NVMe",
+  "disk_size_bytes": 4000787030016,
+  "write_cache": "enabled",
+  "trim_enabled": 1,
+  "temp_c_at_start": 38,
+  "temp_warning_c": 81,
+  "temp_critical_c": 85,
+  "logical_sector": 512,
+  "physical_sector": 4096,
+  "is_admin": true,
+  "power_plan": "Balanced",
+  "filesystem": "NTFS",
+  "cluster_bytes": "4096",
+  "volume": "D:\\",
+  "pcie_link": "8.0 GT/s x4",
+  "pcie_link_max": "32.0 GT/s x4",
+  "pcie_raw_ceiling_GBps": 3.938,
+  "defender_exclusions": [
+    null
+  ],
+  "defender_excludes_target": false
+}
+[21:41:52] == sysinfo done in 24s
+[21:41:52] == prepare
+[21:41:53] creating D:/ssdtest/fio-scratch.bin (512M); the sequential fill writes all of it
+[21:41:53] sequential fill x1 of 536870912 bytes
+[21:41:54] precondition/seqfill rep1  (rw=write bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:41:55] random 4k fill: 134217728 bytes
+[21:41:56] precondition/randfill rep1  (rw=randwrite bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:41:58] preconditioning complete
+[21:41:58] == prepare done in 6s
+[21:41:58] == validate
+[21:41:58] 1) integrity: crc32c write+verify over 16M
+[21:41:59] validation/verify_crc32c rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:00]    verify passed (fio exits non-zero on any mismatch with verify_fatal=1)
+[21:42:00] 2) reference ref_qd1 randread 4k rep1
+[21:42:04] validation/fio_windowsaio_randread_4k rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:07] 2) reference ref_qd1 randwrite 4k rep1
+[21:42:10] validation/fio_windowsaio_randwrite_4k rep1  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:13] 2) reference ref_qd1 read 128k rep1
+[21:42:16] validation/fio_windowsaio_read_128k rep1  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:19] 2) reference ref_qd1 write 128k rep1
+[21:42:22] validation/fio_windowsaio_write_128k rep1  (rw=write bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:26] 3) dd unbuffered sequential read reference (128KiB, QD1)
+4000+0 records in
+4000+0 records out
+524288000 bytes (524 MB, 500 MiB) copied, 0.338307 s, 1.5 GB/s
+[21:42:26] == validate done in 28s
+[21:42:26] == baseline
+[21:42:27] baseline_qd1/randread_4k rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:31] baseline_qd1/randwrite_4k rep1  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:35] baseline_qd1/read_128k rep1  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:39] baseline_qd1/write_128k rep1  (rw=write bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:42] == baseline done in 16s
+[21:42:43] == bs
+[21:42:44] bs_sweep/randread_4k rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:48] bs_sweep/randread_64k rep1  (rw=randread bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:52] bs_sweep/randread_128k rep1  (rw=randread bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:42:56] bs_sweep/randwrite_4k rep1  (rw=randwrite bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:00] bs_sweep/randwrite_64k rep1  (rw=randwrite bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:03] bs_sweep/randwrite_128k rep1  (rw=randwrite bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:08] bs_sweep/read_4k rep1  (rw=read bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:12] bs_sweep/read_64k rep1  (rw=read bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:16] bs_sweep/read_128k rep1  (rw=read bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:20] bs_sweep/write_4k rep1  (rw=write bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:24] bs_sweep/write_64k rep1  (rw=write bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:28] bs_sweep/write_128k rep1  (rw=write bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:31] == bs done in 48s
+[21:43:31] == mix
+[21:43:32] mix_sweep/r100_4k rep1  (rw=randrw bs=4k qd=32 nj=1 mix=100 direct=1 engine=windowsaio)
+[21:43:36] mix_sweep/r50_4k rep1  (rw=randrw bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:40] mix_sweep/r0_4k rep1  (rw=randrw bs=4k qd=32 nj=1 mix=0 direct=1 engine=windowsaio)
+[21:43:43] == mix done in 12s
+[21:43:43] == qd
+[21:43:45] qd_sweep/randread_4k_nj1_qd1 rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:49] qd_sweep/randread_4k_nj1_qd4 rep1  (rw=randread bs=4k qd=4 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:53] qd_sweep/randread_4k_nj1_qd16 rep1  (rw=randread bs=4k qd=16 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:43:58] qd_sweep/randread_4k_nj1_qd64 rep1  (rw=randread bs=4k qd=64 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:44:02] qd_sweep/randread_4k_nj4_qd4 rep1  (rw=randread bs=4k qd=1 nj=4 mix=50 direct=1 engine=windowsaio)
+[21:44:06] qd_sweep/randread_4k_nj4_qd16 rep1  (rw=randread bs=4k qd=4 nj=4 mix=50 direct=1 engine=windowsaio)
+[21:44:10] qd_sweep/randread_4k_nj4_qd64 rep1  (rw=randread bs=4k qd=16 nj=4 mix=50 direct=1 engine=windowsaio)
+[21:44:14] qd_sweep/randwrite_4k_nj4_qd4 rep1  (rw=randwrite bs=4k qd=1 nj=4 mix=50 direct=1 engine=windowsaio)
+[21:44:19] qd_sweep/randwrite_4k_nj4_qd16 rep1  (rw=randwrite bs=4k qd=4 nj=4 mix=50 direct=1 engine=windowsaio)
+[21:44:23] qd_sweep/randwrite_4k_nj4_qd64 rep1  (rw=randwrite bs=4k qd=16 nj=4 mix=50 direct=1 engine=windowsaio)
+[21:44:27] qd_sweep/read_128k_nj1_qd1 rep1  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:44:31] qd_sweep/read_128k_nj1_qd4 rep1  (rw=read bs=128k qd=4 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:44:36] qd_sweep/read_128k_nj1_qd16 rep1  (rw=read bs=128k qd=16 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:44:40] qd_sweep/read_128k_nj1_qd64 rep1  (rw=read bs=128k qd=64 nj=1 mix=50 direct=1 engine=windowsaio)
+[21:44:43] == qd done in 60s
+[21:44:43] == peak
+[21:44:45] peak/randread_4k_peak rep1  (rw=randread bs=4k qd=64 nj=4 mix=50 direct=1 engine=windowsaio)
+[21:44:49] peak/randwrite_4k_peak rep1  (rw=randwrite bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[21:44:53] peak/read_1m_peak rep1  (rw=read bs=1m qd=16 nj=2 mix=50 direct=1 engine=windowsaio)
+[21:44:57] peak/write_1m_peak rep1  (rw=write bs=1m qd=16 nj=2 mix=50 direct=1 engine=windowsaio)
+[21:45:00] == peak done in 17s
+[21:45:00] == tail
+[21:45:02] tail experiment at QD_mid=4 QD_knee=16 (numjobs=4)
+/home/Brendan-NewPc/ssd-profiling/scripts/exp_tail.sh: line 20: ((: 4: arithmetic syntax error: invalid arithmetic operator (error token is "")
+/home/Brendan-NewPc/ssd-profiling/scripts/common.sh: line 397: 4: arithmetic syntax error: invalid arithmetic operator (error token is "")

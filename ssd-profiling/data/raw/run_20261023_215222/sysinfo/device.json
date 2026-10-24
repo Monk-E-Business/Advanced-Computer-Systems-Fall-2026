@@ -1,0 +1,1 @@
+{"disk": 0, "vendor": "", "model": "Samsung SSD 990 EVO Plus 4TB", "firmware": "2B2QKXG7", "bus": "NVMe", "size_bytes": 4000787030016, "logical_sector": 512, "physical_sector": 4096, "write_cache": "enabled", "trim_enabled": 1, "seek_penalty": 0, "partition_style": "GPT", "data_partitions": 5, "system_disk": true, "temp_c": 36, "temp_warning_c": 81, "temp_critical_c": 85}

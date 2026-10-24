@@ -1,0 +1,7 @@
+{"experiment": "validation", "point": "fio_windowsaio_randread_4k", "rep": 1, "timestamp": "2026-10-23T21:42:03-04:00", "platform": "windows",
+ "jobfile": "workload.fio", "target": "D:/ssdtest/fio-scratch.bin", "fio_filename": "D\\:/ssdtest/fio-scratch.bin",
+ "target_kind": "file", "disk_id": "0", "counter_dev": "\\\\?\\Volume{adc4f2f6-c71e-493e-b9f1-6686873e412f}",
+ "span_bytes": 536870912, "ioengine": "windowsaio", "direct": "1", "rw": "randread", "bs": "4k",
+ "qd": "1", "nj": "1", "rwmixread": "50", "size": "536870912", "runtime": "2", "ramp": "0",
+ "compress_pct": "0", "fio_cpus": "2-5", "quick": "1",
+ "diskstats_before": "38160 158819328 41226 783095296", "diskstats_after": "70897 292910080 41226 783095296", "temp_before_c": "39", "temp_after_c": "39", "IOENGINE": "windowsaio", "RW": "randread", "BS": "4k", "QD": "1", "NJ": "1", "VARIANT": "windowsaio"}

@@ -1,0 +1,34 @@
+; -----------------------------------------------------------------------------
+; Long, logged run for device-state effects (burst -> steady state, SLC cache
+; exhaustion, garbage collection, thermal throttling). Per-interval averages of
+; bandwidth, IOPS and latency are written to seqwrite_128k_qd32_rep1_{bw,iops,lat}.N.log
+; every 1000 ms. Used with RW=randwrite BS=4k (steady state) and
+; RW=write BS=128k (SLC write-cache cliff).
+; -----------------------------------------------------------------------------
+[global]
+filename=D\:/ssdtest/fio-scratch.bin
+cpus_allowed=2-5
+ioengine=windowsaio
+direct=1
+time_based=1
+runtime=600
+size=68719476736
+refill_buffers=1
+buffer_compress_percentage=0
+norandommap=1
+randrepeat=0
+lat_percentiles=1
+clat_percentiles=0
+percentile_list=50:95:99:99.9:99.99
+thread=1
+group_reporting=1
+log_avg_msec=1000
+write_bw_log=seqwrite_128k_qd32_rep1
+write_iops_log=seqwrite_128k_qd32_rep1
+write_lat_log=seqwrite_128k_qd32_rep1
+
+[job]
+rw=write
+bs=128k
+iodepth=32
+numjobs=1

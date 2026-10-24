@@ -1,0 +1,2 @@
+$ /c/Program Files/fio/fio.exe --version
+fio-3.43

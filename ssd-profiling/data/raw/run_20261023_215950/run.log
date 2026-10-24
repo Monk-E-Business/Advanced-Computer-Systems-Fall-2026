@@ -1,0 +1,420 @@
+[21:59:52] run run_20261023_215950  QUICK=0  target=D:/ssdtest/fio-scratch.bin
+[21:59:52] == sysinfo
+[21:59:52] collecting system info into /home/Brendan-NewPc/ssd-profiling/data/raw/run_20261023_215950/sysinfo
+{
+  "platform": "windows",
+  "target": "D:/ssdtest/fio-scratch.bin",
+  "target_kind": "file",
+  "span_bytes": 68719476736,
+  "disk": "0",
+  "ioengine": "windowsaio",
+  "fio_pinning": "2-5",
+  "fio": "fio-3.43",
+  "gxx": "g++.exe (Rev4, Built by MSYS2 project) 16.2.0",
+  "os": "Microsoft Windows 11 Pro 10.0.26200 (build 26200)",
+  "cpu_model": "AMD Ryzen 5 3600 6-Core Processor",
+  "cpu_cores": 6,
+  "cpu_logical": 12,
+  "smt": "on",
+  "cpu_max_mhz": 3593,
+  "ram_bytes": 34287804416,
+  "model": "Samsung SSD 990 EVO Plus 4TB",
+  "firmware": "2B2QKXG7",
+  "bus": "NVMe",
+  "disk_size_bytes": 4000787030016,
+  "write_cache": "enabled",
+  "trim_enabled": 1,
+  "temp_c_at_start": 38,
+  "temp_warning_c": 81,
+  "temp_critical_c": 85,
+  "logical_sector": 512,
+  "physical_sector": 4096,
+  "is_admin": true,
+  "power_plan": "Balanced",
+  "filesystem": "NTFS",
+  "cluster_bytes": "4096",
+  "volume": "D:\\",
+  "pcie_link": "8.0 GT/s x4",
+  "pcie_link_max": "32.0 GT/s x4",
+  "pcie_raw_ceiling_GBps": 3.938,
+  "defender_exclusions": [
+    null
+  ],
+  "defender_excludes_target": false
+}
+[22:00:15] == sysinfo done in 23s
+[22:00:15] == prepare
+[22:00:16] removing incomplete D:/ssdtest/fio-scratch.bin from an earlier, interrupted run
+[22:00:16] creating D:/ssdtest/fio-scratch.bin (64G); the sequential fill writes all of it
+[22:00:16] sequential fill x2 of 68719476736 bytes
+[22:00:17] precondition/seqfill rep1  (rw=write bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:02:40] random 4k fill: 68719476736 bytes
+[22:02:41] precondition/randfill rep1  (rw=randwrite bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:08:38] preconditioning complete
+[22:08:38] == prepare done in 503s
+[22:08:38] == validate
+[22:08:39] 1) integrity: crc32c write+verify over 256M
+[22:08:39] validation/verify_crc32c rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:08:42]    verify passed (fio exits non-zero on any mismatch with verify_fatal=1)
+[22:08:43] 2) reference ref_qd1 randread 4k rep1
+[22:09:14] validation/fio_windowsaio_randread_4k rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:09:51] 2) reference ref_qd1 randwrite 4k rep1
+[22:10:22] validation/fio_windowsaio_randwrite_4k rep1  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:10:59] 2) reference ref_qd1 read 128k rep1
+[22:11:30] validation/fio_windowsaio_read_128k rep1  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:12:08] 2) reference ref_qd1 write 128k rep1
+[22:12:39] validation/fio_windowsaio_write_128k rep1  (rw=write bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:13:16] 2) reference ref_qd1 randread 4k rep2
+[22:13:47] validation/fio_windowsaio_randread_4k rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:14:25] 2) reference ref_qd1 randwrite 4k rep2
+[22:14:56] validation/fio_windowsaio_randwrite_4k rep2  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:15:33] 2) reference ref_qd1 read 128k rep2
+[22:16:04] validation/fio_windowsaio_read_128k rep2  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:16:41] 2) reference ref_qd1 write 128k rep2
+[22:17:12] validation/fio_windowsaio_write_128k rep2  (rw=write bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:17:50] 2) reference ref_qd1 randread 4k rep3
+[22:18:21] validation/fio_windowsaio_randread_4k rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:18:58] 2) reference ref_qd1 randwrite 4k rep3
+[22:19:29] validation/fio_windowsaio_randwrite_4k rep3  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:20:07] 2) reference ref_qd1 read 128k rep3
+[22:20:38] validation/fio_windowsaio_read_128k rep3  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:21:15] 2) reference ref_qd1 write 128k rep3
+[22:21:46] validation/fio_windowsaio_write_128k rep3  (rw=write bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:22:24] 3) dd unbuffered sequential read reference (128KiB, QD1)
+60000+0 records in
+60000+0 records out
+7864320000 bytes (7.9 GB, 7.3 GiB) copied, 8.93087 s, 881 MB/s
+[22:22:33] == validate done in 835s
+[22:22:33] == baseline
+[22:22:34] baseline_qd1/randread_4k rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:23:12] baseline_qd1/randwrite_4k rep1  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:23:50] baseline_qd1/read_128k rep1  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:24:28] baseline_qd1/write_128k rep1  (rw=write bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:25:06] baseline_qd1/randread_4k rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:25:44] baseline_qd1/randwrite_4k rep2  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:26:22] baseline_qd1/read_128k rep2  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:27:00] baseline_qd1/write_128k rep2  (rw=write bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:27:38] baseline_qd1/randread_4k rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:28:16] baseline_qd1/randwrite_4k rep3  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:28:54] baseline_qd1/read_128k rep3  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:29:32] baseline_qd1/write_128k rep3  (rw=write bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:30:09] == baseline done in 456s
+[22:30:09] == bs
+[22:30:10] bs_sweep/randread_4k rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:30:48] bs_sweep/randread_16k rep1  (rw=randread bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:31:26] bs_sweep/randread_32k rep1  (rw=randread bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:32:04] bs_sweep/randread_64k rep1  (rw=randread bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:32:42] bs_sweep/randread_128k rep1  (rw=randread bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:33:20] bs_sweep/randread_256k rep1  (rw=randread bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:33:58] bs_sweep/randwrite_4k rep1  (rw=randwrite bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:34:36] bs_sweep/randwrite_16k rep1  (rw=randwrite bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:35:14] bs_sweep/randwrite_32k rep1  (rw=randwrite bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:35:52] bs_sweep/randwrite_64k rep1  (rw=randwrite bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:36:30] bs_sweep/randwrite_128k rep1  (rw=randwrite bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:37:08] bs_sweep/randwrite_256k rep1  (rw=randwrite bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:37:46] bs_sweep/read_4k rep1  (rw=read bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:38:24] bs_sweep/read_16k rep1  (rw=read bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:39:02] bs_sweep/read_32k rep1  (rw=read bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:39:40] bs_sweep/read_64k rep1  (rw=read bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:40:18] bs_sweep/read_128k rep1  (rw=read bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:40:56] bs_sweep/read_256k rep1  (rw=read bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:41:34] bs_sweep/read_512k rep1  (rw=read bs=512k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:42:12] bs_sweep/read_1m rep1  (rw=read bs=1m qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:42:50] bs_sweep/write_4k rep1  (rw=write bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:43:28] bs_sweep/write_16k rep1  (rw=write bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:44:06] bs_sweep/write_32k rep1  (rw=write bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:44:44] bs_sweep/write_64k rep1  (rw=write bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:45:22] bs_sweep/write_128k rep1  (rw=write bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:46:00] bs_sweep/write_256k rep1  (rw=write bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:46:38] bs_sweep/write_512k rep1  (rw=write bs=512k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:47:16] bs_sweep/write_1m rep1  (rw=write bs=1m qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:47:54] bs_sweep/randread_4k rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:48:32] bs_sweep/randread_16k rep2  (rw=randread bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:49:10] bs_sweep/randread_32k rep2  (rw=randread bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:49:48] bs_sweep/randread_64k rep2  (rw=randread bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:50:26] bs_sweep/randread_128k rep2  (rw=randread bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:51:04] bs_sweep/randread_256k rep2  (rw=randread bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:51:42] bs_sweep/randwrite_4k rep2  (rw=randwrite bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:52:20] bs_sweep/randwrite_16k rep2  (rw=randwrite bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:52:58] bs_sweep/randwrite_32k rep2  (rw=randwrite bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:53:36] bs_sweep/randwrite_64k rep2  (rw=randwrite bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:54:14] bs_sweep/randwrite_128k rep2  (rw=randwrite bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:54:52] bs_sweep/randwrite_256k rep2  (rw=randwrite bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:55:30] bs_sweep/read_4k rep2  (rw=read bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:56:08] bs_sweep/read_16k rep2  (rw=read bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:56:46] bs_sweep/read_32k rep2  (rw=read bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:57:24] bs_sweep/read_64k rep2  (rw=read bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:58:02] bs_sweep/read_128k rep2  (rw=read bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:58:40] bs_sweep/read_256k rep2  (rw=read bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:59:18] bs_sweep/read_512k rep2  (rw=read bs=512k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[22:59:56] bs_sweep/read_1m rep2  (rw=read bs=1m qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:00:34] bs_sweep/write_4k rep2  (rw=write bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:01:12] bs_sweep/write_16k rep2  (rw=write bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:01:50] bs_sweep/write_32k rep2  (rw=write bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:02:28] bs_sweep/write_64k rep2  (rw=write bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:03:06] bs_sweep/write_128k rep2  (rw=write bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:03:44] bs_sweep/write_256k rep2  (rw=write bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:04:21] bs_sweep/write_512k rep2  (rw=write bs=512k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:04:59] bs_sweep/write_1m rep2  (rw=write bs=1m qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:05:37] bs_sweep/randread_4k rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:06:15] bs_sweep/randread_16k rep3  (rw=randread bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:06:53] bs_sweep/randread_32k rep3  (rw=randread bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:07:31] bs_sweep/randread_64k rep3  (rw=randread bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:08:09] bs_sweep/randread_128k rep3  (rw=randread bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:08:47] bs_sweep/randread_256k rep3  (rw=randread bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:09:25] bs_sweep/randwrite_4k rep3  (rw=randwrite bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:10:03] bs_sweep/randwrite_16k rep3  (rw=randwrite bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:10:41] bs_sweep/randwrite_32k rep3  (rw=randwrite bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:11:19] bs_sweep/randwrite_64k rep3  (rw=randwrite bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:11:57] bs_sweep/randwrite_128k rep3  (rw=randwrite bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:12:35] bs_sweep/randwrite_256k rep3  (rw=randwrite bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:13:13] bs_sweep/read_4k rep3  (rw=read bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:13:51] bs_sweep/read_16k rep3  (rw=read bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:14:29] bs_sweep/read_32k rep3  (rw=read bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:15:07] bs_sweep/read_64k rep3  (rw=read bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:15:45] bs_sweep/read_128k rep3  (rw=read bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:16:23] bs_sweep/read_256k rep3  (rw=read bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:17:01] bs_sweep/read_512k rep3  (rw=read bs=512k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:17:39] bs_sweep/read_1m rep3  (rw=read bs=1m qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:18:17] bs_sweep/write_4k rep3  (rw=write bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:18:55] bs_sweep/write_16k rep3  (rw=write bs=16k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:19:33] bs_sweep/write_32k rep3  (rw=write bs=32k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:20:11] bs_sweep/write_64k rep3  (rw=write bs=64k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:20:49] bs_sweep/write_128k rep3  (rw=write bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:21:27] bs_sweep/write_256k rep3  (rw=write bs=256k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:22:04] bs_sweep/write_512k rep3  (rw=write bs=512k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:22:43] bs_sweep/write_1m rep3  (rw=write bs=1m qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:23:20] == bs done in 3191s
+[23:23:20] == mix
+[23:23:22] mix_sweep/r100_4k rep1  (rw=randrw bs=4k qd=32 nj=1 mix=100 direct=1 engine=windowsaio)
+[23:24:00] mix_sweep/r70_4k rep1  (rw=randrw bs=4k qd=32 nj=1 mix=70 direct=1 engine=windowsaio)
+[23:24:38] mix_sweep/r50_4k rep1  (rw=randrw bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:25:16] mix_sweep/r0_4k rep1  (rw=randrw bs=4k qd=32 nj=1 mix=0 direct=1 engine=windowsaio)
+[23:25:54] mix_sweep/r100_4k rep2  (rw=randrw bs=4k qd=32 nj=1 mix=100 direct=1 engine=windowsaio)
+[23:26:32] mix_sweep/r70_4k rep2  (rw=randrw bs=4k qd=32 nj=1 mix=70 direct=1 engine=windowsaio)
+[23:27:10] mix_sweep/r50_4k rep2  (rw=randrw bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:27:48] mix_sweep/r0_4k rep2  (rw=randrw bs=4k qd=32 nj=1 mix=0 direct=1 engine=windowsaio)
+[23:28:26] mix_sweep/r100_4k rep3  (rw=randrw bs=4k qd=32 nj=1 mix=100 direct=1 engine=windowsaio)
+[23:29:04] mix_sweep/r70_4k rep3  (rw=randrw bs=4k qd=32 nj=1 mix=70 direct=1 engine=windowsaio)
+[23:29:42] mix_sweep/r50_4k rep3  (rw=randrw bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:30:20] mix_sweep/r0_4k rep3  (rw=randrw bs=4k qd=32 nj=1 mix=0 direct=1 engine=windowsaio)
+[23:30:57] == mix done in 457s
+[23:30:57] == qd
+[23:30:59] qd_sweep/randread_4k_nj1_qd1 rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:31:37] qd_sweep/randread_4k_nj1_qd2 rep1  (rw=randread bs=4k qd=2 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:32:15] qd_sweep/randread_4k_nj1_qd4 rep1  (rw=randread bs=4k qd=4 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:32:53] qd_sweep/randread_4k_nj1_qd8 rep1  (rw=randread bs=4k qd=8 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:33:32] qd_sweep/randread_4k_nj1_qd16 rep1  (rw=randread bs=4k qd=16 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:34:10] qd_sweep/randread_4k_nj1_qd32 rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:34:48] qd_sweep/randread_4k_nj1_qd64 rep1  (rw=randread bs=4k qd=64 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:35:27] qd_sweep/randread_4k_nj1_qd128 rep1  (rw=randread bs=4k qd=128 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:36:05] qd_sweep/randread_4k_nj1_qd256 rep1  (rw=randread bs=4k qd=256 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:36:43] qd_sweep/randread_4k_nj4_qd4 rep1  (rw=randread bs=4k qd=1 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:37:21] qd_sweep/randread_4k_nj4_qd8 rep1  (rw=randread bs=4k qd=2 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:38:00] qd_sweep/randread_4k_nj4_qd16 rep1  (rw=randread bs=4k qd=4 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:38:38] qd_sweep/randread_4k_nj4_qd32 rep1  (rw=randread bs=4k qd=8 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:39:16] qd_sweep/randread_4k_nj4_qd64 rep1  (rw=randread bs=4k qd=16 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:39:54] qd_sweep/randread_4k_nj4_qd128 rep1  (rw=randread bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:40:32] qd_sweep/randread_4k_nj4_qd256 rep1  (rw=randread bs=4k qd=64 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:41:10] qd_sweep/randwrite_4k_nj4_qd4 rep1  (rw=randwrite bs=4k qd=1 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:41:49] qd_sweep/randwrite_4k_nj4_qd8 rep1  (rw=randwrite bs=4k qd=2 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:42:27] qd_sweep/randwrite_4k_nj4_qd16 rep1  (rw=randwrite bs=4k qd=4 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:43:05] qd_sweep/randwrite_4k_nj4_qd32 rep1  (rw=randwrite bs=4k qd=8 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:43:43] qd_sweep/randwrite_4k_nj4_qd64 rep1  (rw=randwrite bs=4k qd=16 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:44:22] qd_sweep/randwrite_4k_nj4_qd128 rep1  (rw=randwrite bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:45:00] qd_sweep/randwrite_4k_nj4_qd256 rep1  (rw=randwrite bs=4k qd=64 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:45:38] qd_sweep/read_128k_nj1_qd1 rep1  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:46:16] qd_sweep/read_128k_nj1_qd2 rep1  (rw=read bs=128k qd=2 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:46:54] qd_sweep/read_128k_nj1_qd4 rep1  (rw=read bs=128k qd=4 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:47:33] qd_sweep/read_128k_nj1_qd8 rep1  (rw=read bs=128k qd=8 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:48:11] qd_sweep/read_128k_nj1_qd16 rep1  (rw=read bs=128k qd=16 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:48:49] qd_sweep/read_128k_nj1_qd32 rep1  (rw=read bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:49:27] qd_sweep/read_128k_nj1_qd64 rep1  (rw=read bs=128k qd=64 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:50:05] qd_sweep/read_128k_nj1_qd128 rep1  (rw=read bs=128k qd=128 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:50:43] qd_sweep/read_128k_nj1_qd256 rep1  (rw=read bs=128k qd=256 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:51:21] qd_sweep/randread_4k_nj1_qd1 rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:52:00] qd_sweep/randread_4k_nj1_qd2 rep2  (rw=randread bs=4k qd=2 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:52:38] qd_sweep/randread_4k_nj1_qd4 rep2  (rw=randread bs=4k qd=4 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:53:16] qd_sweep/randread_4k_nj1_qd8 rep2  (rw=randread bs=4k qd=8 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:53:54] qd_sweep/randread_4k_nj1_qd16 rep2  (rw=randread bs=4k qd=16 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:54:32] qd_sweep/randread_4k_nj1_qd32 rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:55:10] qd_sweep/randread_4k_nj1_qd64 rep2  (rw=randread bs=4k qd=64 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:55:48] qd_sweep/randread_4k_nj1_qd128 rep2  (rw=randread bs=4k qd=128 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:56:27] qd_sweep/randread_4k_nj1_qd256 rep2  (rw=randread bs=4k qd=256 nj=1 mix=50 direct=1 engine=windowsaio)
+[23:57:05] qd_sweep/randread_4k_nj4_qd4 rep2  (rw=randread bs=4k qd=1 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:57:43] qd_sweep/randread_4k_nj4_qd8 rep2  (rw=randread bs=4k qd=2 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:58:21] qd_sweep/randread_4k_nj4_qd16 rep2  (rw=randread bs=4k qd=4 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:59:00] qd_sweep/randread_4k_nj4_qd32 rep2  (rw=randread bs=4k qd=8 nj=4 mix=50 direct=1 engine=windowsaio)
+[23:59:38] qd_sweep/randread_4k_nj4_qd64 rep2  (rw=randread bs=4k qd=16 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:00:16] qd_sweep/randread_4k_nj4_qd128 rep2  (rw=randread bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:00:54] qd_sweep/randread_4k_nj4_qd256 rep2  (rw=randread bs=4k qd=64 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:01:32] qd_sweep/randwrite_4k_nj4_qd4 rep2  (rw=randwrite bs=4k qd=1 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:02:10] qd_sweep/randwrite_4k_nj4_qd8 rep2  (rw=randwrite bs=4k qd=2 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:02:48] qd_sweep/randwrite_4k_nj4_qd16 rep2  (rw=randwrite bs=4k qd=4 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:03:27] qd_sweep/randwrite_4k_nj4_qd32 rep2  (rw=randwrite bs=4k qd=8 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:04:05] qd_sweep/randwrite_4k_nj4_qd64 rep2  (rw=randwrite bs=4k qd=16 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:04:43] qd_sweep/randwrite_4k_nj4_qd128 rep2  (rw=randwrite bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:05:22] qd_sweep/randwrite_4k_nj4_qd256 rep2  (rw=randwrite bs=4k qd=64 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:06:00] qd_sweep/read_128k_nj1_qd1 rep2  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:06:38] qd_sweep/read_128k_nj1_qd2 rep2  (rw=read bs=128k qd=2 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:07:16] qd_sweep/read_128k_nj1_qd4 rep2  (rw=read bs=128k qd=4 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:07:54] qd_sweep/read_128k_nj1_qd8 rep2  (rw=read bs=128k qd=8 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:08:32] qd_sweep/read_128k_nj1_qd16 rep2  (rw=read bs=128k qd=16 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:09:10] qd_sweep/read_128k_nj1_qd32 rep2  (rw=read bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:09:49] qd_sweep/read_128k_nj1_qd64 rep2  (rw=read bs=128k qd=64 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:10:27] qd_sweep/read_128k_nj1_qd128 rep2  (rw=read bs=128k qd=128 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:11:05] qd_sweep/read_128k_nj1_qd256 rep2  (rw=read bs=128k qd=256 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:11:43] qd_sweep/randread_4k_nj1_qd1 rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:12:21] qd_sweep/randread_4k_nj1_qd2 rep3  (rw=randread bs=4k qd=2 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:12:59] qd_sweep/randread_4k_nj1_qd4 rep3  (rw=randread bs=4k qd=4 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:13:38] qd_sweep/randread_4k_nj1_qd8 rep3  (rw=randread bs=4k qd=8 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:14:16] qd_sweep/randread_4k_nj1_qd16 rep3  (rw=randread bs=4k qd=16 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:14:54] qd_sweep/randread_4k_nj1_qd32 rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:15:32] qd_sweep/randread_4k_nj1_qd64 rep3  (rw=randread bs=4k qd=64 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:16:10] qd_sweep/randread_4k_nj1_qd128 rep3  (rw=randread bs=4k qd=128 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:16:48] qd_sweep/randread_4k_nj1_qd256 rep3  (rw=randread bs=4k qd=256 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:17:27] qd_sweep/randread_4k_nj4_qd4 rep3  (rw=randread bs=4k qd=1 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:18:05] qd_sweep/randread_4k_nj4_qd8 rep3  (rw=randread bs=4k qd=2 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:18:43] qd_sweep/randread_4k_nj4_qd16 rep3  (rw=randread bs=4k qd=4 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:19:21] qd_sweep/randread_4k_nj4_qd32 rep3  (rw=randread bs=4k qd=8 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:19:59] qd_sweep/randread_4k_nj4_qd64 rep3  (rw=randread bs=4k qd=16 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:20:37] qd_sweep/randread_4k_nj4_qd128 rep3  (rw=randread bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:21:15] qd_sweep/randread_4k_nj4_qd256 rep3  (rw=randread bs=4k qd=64 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:21:54] qd_sweep/randwrite_4k_nj4_qd4 rep3  (rw=randwrite bs=4k qd=1 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:22:32] qd_sweep/randwrite_4k_nj4_qd8 rep3  (rw=randwrite bs=4k qd=2 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:23:10] qd_sweep/randwrite_4k_nj4_qd16 rep3  (rw=randwrite bs=4k qd=4 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:23:48] qd_sweep/randwrite_4k_nj4_qd32 rep3  (rw=randwrite bs=4k qd=8 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:24:26] qd_sweep/randwrite_4k_nj4_qd64 rep3  (rw=randwrite bs=4k qd=16 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:25:04] qd_sweep/randwrite_4k_nj4_qd128 rep3  (rw=randwrite bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:25:43] qd_sweep/randwrite_4k_nj4_qd256 rep3  (rw=randwrite bs=4k qd=64 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:26:21] qd_sweep/read_128k_nj1_qd1 rep3  (rw=read bs=128k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:26:59] qd_sweep/read_128k_nj1_qd2 rep3  (rw=read bs=128k qd=2 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:27:37] qd_sweep/read_128k_nj1_qd4 rep3  (rw=read bs=128k qd=4 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:28:15] qd_sweep/read_128k_nj1_qd8 rep3  (rw=read bs=128k qd=8 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:28:53] qd_sweep/read_128k_nj1_qd16 rep3  (rw=read bs=128k qd=16 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:29:31] qd_sweep/read_128k_nj1_qd32 rep3  (rw=read bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:30:09] qd_sweep/read_128k_nj1_qd64 rep3  (rw=read bs=128k qd=64 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:30:47] qd_sweep/read_128k_nj1_qd128 rep3  (rw=read bs=128k qd=128 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:31:25] qd_sweep/read_128k_nj1_qd256 rep3  (rw=read bs=128k qd=256 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:32:03] == qd done in 3666s
+[00:32:03] == peak
+[00:32:04] peak/randread_4k_peak rep1  (rw=randread bs=4k qd=64 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:32:42] peak/randwrite_4k_peak rep1  (rw=randwrite bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:33:20] peak/read_1m_peak rep1  (rw=read bs=1m qd=16 nj=2 mix=50 direct=1 engine=windowsaio)
+[00:33:58] peak/write_1m_peak rep1  (rw=write bs=1m qd=16 nj=2 mix=50 direct=1 engine=windowsaio)
+[00:34:36] peak/randread_4k_peak rep2  (rw=randread bs=4k qd=64 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:35:14] peak/randwrite_4k_peak rep2  (rw=randwrite bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:35:52] peak/read_1m_peak rep2  (rw=read bs=1m qd=16 nj=2 mix=50 direct=1 engine=windowsaio)
+[00:36:30] peak/write_1m_peak rep2  (rw=write bs=1m qd=16 nj=2 mix=50 direct=1 engine=windowsaio)
+[00:37:08] peak/randread_4k_peak rep3  (rw=randread bs=4k qd=64 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:37:46] peak/randwrite_4k_peak rep3  (rw=randwrite bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:38:24] peak/read_1m_peak rep3  (rw=read bs=1m qd=16 nj=2 mix=50 direct=1 engine=windowsaio)
+[00:39:02] peak/write_1m_peak rep3  (rw=write bs=1m qd=16 nj=2 mix=50 direct=1 engine=windowsaio)
+[00:39:39] == peak done in 456s
+[00:39:39] == tail
+[00:39:43] tail experiment at QD_mid=8 QD_knee=32 (numjobs=4)
+[00:39:44] tail/randread_4k_base_qd1 rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:41:22] tail/randread_4k_mid_qd8 rep1  (rw=randread bs=4k qd=2 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:43:00] tail/randread_4k_knee_qd32 rep1  (rw=randread bs=4k qd=8 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:44:38] tail/randrw70_4k_qd32 rep1  (rw=randrw bs=4k qd=8 nj=4 mix=70 direct=1 engine=windowsaio)
+[00:46:16] tail/randread_4k_base_qd1 rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:47:54] tail/randread_4k_mid_qd8 rep2  (rw=randread bs=4k qd=2 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:49:32] tail/randread_4k_knee_qd32 rep2  (rw=randread bs=4k qd=8 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:51:10] tail/randrw70_4k_qd32 rep2  (rw=randrw bs=4k qd=8 nj=4 mix=70 direct=1 engine=windowsaio)
+[00:52:48] tail/randread_4k_base_qd1 rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:54:26] tail/randread_4k_mid_qd8 rep3  (rw=randread bs=4k qd=2 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:56:04] tail/randread_4k_knee_qd32 rep3  (rw=randread bs=4k qd=8 nj=4 mix=50 direct=1 engine=windowsaio)
+[00:57:42] tail/randrw70_4k_qd32 rep3  (rw=randrw bs=4k qd=8 nj=4 mix=70 direct=1 engine=windowsaio)
+[00:59:20] == tail done in 1181s
+[00:59:20] == ws
+[00:59:21] working_set/randread_4k_ws1G_qd1 rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[00:59:59] working_set/randread_4k_ws1G_qd32 rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:00:37] working_set/randread_4k_ws4G_qd1 rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:01:15] working_set/randread_4k_ws4G_qd32 rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:01:53] working_set/randread_4k_ws16G_qd1 rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:02:31] working_set/randread_4k_ws16G_qd32 rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:03:09] working_set/randread_4k_ws32G_qd1 rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:03:47] working_set/randread_4k_ws32G_qd32 rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:04:25] working_set/randread_4k_wsFULL_qd1 rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:05:03] working_set/randread_4k_wsFULL_qd32 rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:05:42] working_set/randread_4k_ws1G_qd1 rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:06:20] working_set/randread_4k_ws1G_qd32 rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:06:58] working_set/randread_4k_ws4G_qd1 rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:07:36] working_set/randread_4k_ws4G_qd32 rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:08:14] working_set/randread_4k_ws16G_qd1 rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:08:52] working_set/randread_4k_ws16G_qd32 rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:09:30] working_set/randread_4k_ws32G_qd1 rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:10:08] working_set/randread_4k_ws32G_qd32 rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:10:46] working_set/randread_4k_wsFULL_qd1 rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:11:24] working_set/randread_4k_wsFULL_qd32 rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:12:03] working_set/randread_4k_ws1G_qd1 rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:12:41] working_set/randread_4k_ws1G_qd32 rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:13:19] working_set/randread_4k_ws4G_qd1 rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:13:57] working_set/randread_4k_ws4G_qd32 rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:14:35] working_set/randread_4k_ws16G_qd1 rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:15:13] working_set/randread_4k_ws16G_qd32 rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:15:51] working_set/randread_4k_ws32G_qd1 rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:16:29] working_set/randread_4k_ws32G_qd32 rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:17:07] working_set/randread_4k_wsFULL_qd1 rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:17:45] working_set/randread_4k_wsFULL_qd32 rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:18:23] == ws done in 1143s
+[01:18:23] == misleading
+[01:18:26] misleading/A_buffered_read_cold rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=0 engine=sync)
+[01:19:04] misleading/A_buffered_read_warm rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=0 engine=sync)
+[01:19:42] misleading/A_direct_read rep1  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:20:20] misleading/A_buffered_write rep1  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=0 engine=sync)
+[01:21:00] misleading/A_direct_write rep1  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:21:38] misleading/B1_sync_iodepth32 rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=0 engine=sync)
+[01:22:16] misleading/B2_async_iodepth32 rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:22:54] misleading/B3_async_iodepth32_nj4 rep1  (rw=randread bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[01:23:33] misleading/A_buffered_read_cold rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=0 engine=sync)
+[01:24:11] misleading/A_buffered_read_warm rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=0 engine=sync)
+[01:24:49] misleading/A_direct_read rep2  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:25:27] misleading/A_buffered_write rep2  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=0 engine=sync)
+[01:26:06] misleading/A_direct_write rep2  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:26:44] misleading/B1_sync_iodepth32 rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=0 engine=sync)
+[01:27:22] misleading/B2_async_iodepth32 rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:28:01] misleading/B3_async_iodepth32_nj4 rep2  (rw=randread bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[01:28:39] misleading/A_buffered_read_cold rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=0 engine=sync)
+[01:29:17] misleading/A_buffered_read_warm rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=0 engine=sync)
+[01:29:55] misleading/A_direct_read rep3  (rw=randread bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:30:33] misleading/A_buffered_write rep3  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=0 engine=sync)
+[01:31:12] misleading/A_direct_write rep3  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:31:50] misleading/B1_sync_iodepth32 rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=0 engine=sync)
+[01:32:28] misleading/B2_async_iodepth32 rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:33:06] misleading/B3_async_iodepth32_nj4 rep3  (rw=randread bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[01:33:45] misleading/C_unwritten_read rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:34:23] misleading/C_written_read rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:35:02] misleading/D_unwritten_write rep1  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:35:05] misleading/D_written_write rep1  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:35:07] misleading/C_unwritten_read rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:35:45] misleading/C_written_read rep2  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:36:24] misleading/D_unwritten_write rep2  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:36:27] misleading/D_written_write rep2  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:36:30] misleading/C_unwritten_read rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:37:08] misleading/C_written_read rep3  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:37:46] misleading/D_unwritten_write rep3  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:37:49] misleading/D_written_write rep3  (rw=randwrite bs=4k qd=1 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:37:51] == misleading done in 1168s
+[01:37:51] == steady
+[01:37:52] idling 300s so the drive can flush its SLC cache
+[01:42:53] steady_state/seqwrite_128k_qd32 rep1  (rw=write bs=128k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[01:52:55] steady_state/randwrite_4k_qd128 rep1  (rw=randwrite bs=4k qd=32 nj=4 mix=50 direct=1 engine=windowsaio)
+[02:22:57] steady_state/randread_4k_qd32_postwrite rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[02:23:34] idling 120s to let background GC drain
+[02:25:35] steady_state/randread_4k_qd32_postidle rep1  (rw=randread bs=4k qd=32 nj=1 mix=50 direct=1 engine=windowsaio)
+[02:26:12] == steady done in 2901s
+[02:26:12] == analysis
+processed 313 runs -> data/processed/run_20261023_215950
+validation: {'PASS': 514, 'FAIL': 62, 'expected-fail': 29, 'WARN': 22}  -> C:/msys64/home/Brendan-NewPc/ssd-profiling/data/processed/run_20261023_215950/validation.md
+  wrote plots/run_20261023_215950/01_baseline_qd1.png
+  wrote plots/run_20261023_215950/02_bs_sweep.png
+  wrote plots/run_20261023_215950/03_mix_sweep.png
+  wrote plots/run_20261023_215950/04_qd_curve.png
+  wrote plots/run_20261023_215950/05_littles_law.png
+  wrote plots/run_20261023_215950/06_tail_ccdf.png
+  wrote plots/run_20261023_215950/07_working_set.png
+  wrote plots/run_20261023_215950/08_steady_state.png
+  wrote plots/run_20261023_215950/09_misleading.png
+  wrote docs/results_tables.md
+[02:26:24] finished run_20261023_215950
