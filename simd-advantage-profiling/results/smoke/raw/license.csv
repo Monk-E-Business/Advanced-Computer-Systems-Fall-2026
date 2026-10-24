@@ -1,0 +1,6 @@
+after,ghz_median,ghz_min,ghz_max,rep
+idle_spin,4.0671,4.0486,4.0671,0
+scalar_mul_add,3.9970,3.8657,4.0424,0
+sse2_mul_add,4.0282,4.0050,4.0424,0
+avx2_fma,4.0171,3.9643,4.0424,0
+idle_spin_again,4.0671,4.0191,4.0671,0

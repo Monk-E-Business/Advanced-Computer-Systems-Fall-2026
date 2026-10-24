@@ -1,0 +1,20 @@
+Code-placement diagnostic (scalar build, saxpy_f32, n = 2048, L1-resident, pinned CPU 1)
+
+Same kernels.o (identical machine code). Only the harness objects linked before it differ, which moves
+saxpy_f32 by 32 bytes in the final executable.
+
+  binary                                       saxpy_f32 addr   loop start   ns per call (median of 5, 3 runs)
+  run-1 harness (commit c2afc16), default      0x66a0           0x66b0       1260 1283 1264
+  current harness, default                     0x66c0           0x66d0        772  788  765
+
+Repeated interleaved 8x (host noisy at the time; minimum is the meaningful statistic):
+  old link layout, default alignment       min 1264 ns
+  new link layout, default alignment       min  818 ns
+  old layout + -falign-functions=64 -falign-loops=64   min 792 ns
+  new layout + -falign-functions=64 -falign-loops=64   min 764 ns
+
+The loop's 28 bytes cross a 64-byte boundary at 0x66c0 in the slow layout and do not in the fast one;
+the jne does not end on a 32-byte boundary in either. A front-end (uop-cache / decode) effect on this
+Skylake-derived core is the most plausible cause; no PMU is available in this VM to confirm.
+Consequence: every run after this one builds kernels with -falign-functions=64 -falign-loops=64.
+This directory (run 1) is kept as evidence; its scalar baseline is too slow at L1/L2 sizes.

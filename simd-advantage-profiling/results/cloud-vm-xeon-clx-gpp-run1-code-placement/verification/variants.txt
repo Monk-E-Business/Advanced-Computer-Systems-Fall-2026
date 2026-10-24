@@ -1,0 +1,6 @@
+scalar|-O3 -fno-tree-vectorize -fno-tree-slp-vectorize
+scalar_native|-O3 -march=native -fno-tree-vectorize -fno-tree-slp-vectorize
+sse2|-O3 -fopenmp-simd
+avx2|-O3 -march=x86-64-v3 -fopenmp-simd
+native|-O3 -march=native -fopenmp-simd
+avx512|-O3 -march=native -mprefer-vector-width=512 -fopenmp-simd

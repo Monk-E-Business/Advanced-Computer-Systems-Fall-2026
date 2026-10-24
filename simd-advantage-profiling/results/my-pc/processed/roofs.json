@@ -1,0 +1,85 @@
+{
+  "caches": {
+    "L1": 32768,
+    "L2": 524288,
+    "L3": 14107908.401458241,
+    "L3_sysfs": 16777216
+  },
+  "bandwidth_gibs": {
+    "read": {
+      "L1": 40.540078082802665,
+      "L2": 39.68322010272864,
+      "LLC": 39.68723505393538,
+      "DRAM": 20.24968436988694
+    },
+    "write": {
+      "L1": 113.1529337907923,
+      "L2": 116.99702723373424,
+      "LLC": 81.94933070125981,
+      "DRAM": 10.063460172805287
+    },
+    "roof": {
+      "L1": 253.00357421451758,
+      "L2": 172.60060416521614,
+      "LLC": 141.47549160780017,
+      "DRAM": 24.036451833793123
+    },
+    "roof_kernel": {
+      "L1": "saxpy/native",
+      "L2": "saxpy/native",
+      "LLC": "saxpy/native",
+      "DRAM": "saxpy/native"
+    },
+    "variant": "native"
+  },
+  "peaks": [
+    {
+      "isa": "scalar_sse",
+      "dtype": "f32",
+      "lanes": 1,
+      "gflops": 6.7577,
+      "ghz": 3.9803,
+      "flops_per_cycle": 1.698
+    },
+    {
+      "isa": "sse2",
+      "dtype": "f32",
+      "lanes": 4,
+      "gflops": 63.6374,
+      "ghz": 3.9803,
+      "flops_per_cycle": 15.988
+    },
+    {
+      "isa": "sse2",
+      "dtype": "f64",
+      "lanes": 2,
+      "gflops": 27.2907,
+      "ghz": 3.9803,
+      "flops_per_cycle": 6.856
+    },
+    {
+      "isa": "scalar_fma",
+      "dtype": "f32",
+      "lanes": 1,
+      "gflops": 16.1302,
+      "ghz": 3.9803,
+      "flops_per_cycle": 4.053
+    },
+    {
+      "isa": "avx2_fma",
+      "dtype": "f32",
+      "lanes": 8,
+      "gflops": 128.4946,
+      "ghz": 3.9803,
+      "flops_per_cycle": 32.283
+    },
+    {
+      "isa": "avx2_fma",
+      "dtype": "f64",
+      "lanes": 4,
+      "gflops": 64.322,
+      "ghz": 3.9803,
+      "flops_per_cycle": 16.16
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+SKIPPED: perf is Linux-only. On Windows, Intel VTune or AMD uProf can collect the same counters (vector FP instructions, L1/LLC misses) for bench.exe by hand.

@@ -1,0 +1,10 @@
+CXX=g++
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+family=gcc
+target=x86_64-linux-gnu
+arch=x86_64
+windows=0
+msystem=none
+harness_flags=-O2 -fno-tree-vectorize -fno-tree-slp-vectorize -ffp-contract=off 
+extra_flags= 
+assembler=as GNU assembler (GNU Binutils for Ubuntu) 2.42

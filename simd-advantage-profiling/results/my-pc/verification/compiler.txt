@@ -1,0 +1,11 @@
+CXX=g++
+g++.exe (Rev4, Built by MSYS2 project) 16.2.0
+family=gcc
+target=x86_64-w64-mingw32
+arch=x86_64
+windows=1
+msystem=UCRT64
+harness_flags=-O2 -fno-tree-vectorize -fno-tree-slp-vectorize -ffp-contract=off -Wa,-muse-unaligned-vector-move
+kernel_common_flags=-std=c++17 -Wall -Wextra -g -falign-functions=64 -falign-loops=64
+extra_flags=-Wa,-muse-unaligned-vector-move -static
+assembler=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/as.exe GNU assembler (GNU Binutils) 2.47.20260726

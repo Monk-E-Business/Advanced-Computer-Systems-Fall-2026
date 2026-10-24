@@ -1,0 +1,101 @@
+{
+  "caches": {
+    "L1": 32768,
+    "L2": 1048576,
+    "L3": 19951595.398059573,
+    "L3_sysfs": 34603008
+  },
+  "bandwidth_gibs": {
+    "read": {
+      "L1": 60.7141699727413,
+      "L2": 45.05496407884592,
+      "LLC": 29.75548891172418,
+      "DRAM": 9.164033636488801
+    },
+    "write": {
+      "L1": 175.04846042211437,
+      "L2": 52.96884257230412,
+      "LLC": 23.094114229820242,
+      "DRAM": 6.854144963483704
+    },
+    "roof": {
+      "L1": 191.2178066038949,
+      "L2": 124.41832233453127,
+      "LLC": 43.79438031349728,
+      "DRAM": 15.10473908989851
+    },
+    "roof_kernel": {
+      "L1": "mul/avx512",
+      "L2": "saxpy/native",
+      "LLC": "saxpy/avx2",
+      "DRAM": "saxpy/avx2"
+    },
+    "variant": "avx512"
+  },
+  "peaks": [
+    {
+      "isa": "scalar_sse",
+      "dtype": "f32",
+      "lanes": 1,
+      "gflops": 5.5029,
+      "ghz": 3.2715,
+      "flops_per_cycle": 1.682
+    },
+    {
+      "isa": "sse2",
+      "dtype": "f32",
+      "lanes": 4,
+      "gflops": 26.2277,
+      "ghz": 3.2715,
+      "flops_per_cycle": 8.017
+    },
+    {
+      "isa": "sse2",
+      "dtype": "f64",
+      "lanes": 2,
+      "gflops": 13.1525,
+      "ghz": 3.2715,
+      "flops_per_cycle": 4.02
+    },
+    {
+      "isa": "scalar_fma",
+      "dtype": "f32",
+      "lanes": 1,
+      "gflops": 13.0206,
+      "ghz": 3.2715,
+      "flops_per_cycle": 3.98
+    },
+    {
+      "isa": "avx2_fma",
+      "dtype": "f32",
+      "lanes": 8,
+      "gflops": 100.6345,
+      "ghz": 3.2715,
+      "flops_per_cycle": 30.761
+    },
+    {
+      "isa": "avx2_fma",
+      "dtype": "f64",
+      "lanes": 4,
+      "gflops": 51.3969,
+      "ghz": 3.2715,
+      "flops_per_cycle": 15.711
+    },
+    {
+      "isa": "avx512_fma",
+      "dtype": "f32",
+      "lanes": 16,
+      "gflops": 165.1478,
+      "ghz": 3.2715,
+      "flops_per_cycle": 50.481
+    },
+    {
+      "isa": "avx512_fma",
+      "dtype": "f64",
+      "lanes": 8,
+      "gflops": 72.3987,
+      "ghz": 3.2715,
+      "flops_per_cycle": 22.13
+    }
+  ]
+}

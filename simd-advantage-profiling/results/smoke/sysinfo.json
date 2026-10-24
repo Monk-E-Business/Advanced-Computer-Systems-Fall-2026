@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-10-23T20:10:41-0400",
+  "hostname": "BRENDAN-DESKTOP",
+  "platform": "windows",
+  "msystem": "UCRT64",
+  "cpu_model": "AMD Ryzen 5 3600 6-Core Processor",
+  "arch": "AMD64",
+  "logical_cpus": 12,
+  "physical_cores": 6,
+  "smt_active": true,
+  "hybrid_cpu": false,
+  "top_class_cpus": "0,2,4,6,8,10",
+  "caches": {
+    "L1d": {
+      "bytes": 32768
+    },
+    "L2": {
+      "bytes": 524288
+    },
+    "L3": {
+      "bytes": 16777216
+    }
+  },
+  "pinned_cpu": 10,
+  "timer": "QueryPerformanceCounter, resolution 100.0 ns",
+  "measured_ghz_dependent_add_chain": [
+    3.9862,
+    3.9883,
+    3.986
+  ],
+  "isa_flags": {
+    "sse2": true,
+    "sse4_2": true,
+    "avx": true,
+    "avx2": true,
+    "fma": true,
+    "avx512f": false,
+    "avx512vl": false,
+    "avx512bw": false,
+    "avx512dq": false,
+    "avx512vnni": false,
+    "avx512fp16": false,
+    "avx512bf16": false,
+    "amx_tile": false
+  },
+  "compiler": "CXX=g++\ng++.exe (Rev4, Built by MSYS2 project) 16.2.0\nfamily=gcc\ntarget=x86_64-w64-mingw32\narch=x86_64\nwindows=1\nmsystem=UCRT64\nharness_flags=-O2 -fno-tree-vectorize -fno-tree-slp-vectorize -ffp-contract=off -Wa,-muse-unaligned-vector-move\nkernel_common_flags=-std=c++17 -Wall -Wextra -g -falign-functions=64 -falign-loops=64\nextra_flags=-Wa,-muse-unaligned-vector-move -static\nassembler=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/as.exe GNU assembler (GNU Binutils) 2.47.20260726",
+  "variants": {
+    "scalar": "-O3 -fno-tree-vectorize -fno-tree-slp-vectorize",
+    "scalar_native": "-O3 -march=native -fno-tree-vectorize -fno-tree-slp-vectorize",
+    "sse2": "-O3 -fopenmp-simd",
+    "avx2": "-O3 -march=x86-64-v3 -fopenmp-simd",
+    "native": "-O3 -march=native -fopenmp-simd"
+  },
+  "python": "3.14.7",
+  "os": "Microsoft Windows 11 Pro (build 26200)",
+  "kernel": "10.0.26200",
+  "wsl2": false,
+  "hypervisor": "n/a (native Windows)",
+  "frequency_policy": "Windows power plan: Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+  "on_ac_power": true,
+  "cpu_max_mhz_reported": 3593,
+  "windows_host": {
+    "cpu": "AMD Ryzen 5 3600 6-Core Processor              ",
+    "cores": 6,
+    "logical": 12,
+    "max_mhz": 3593,
+    "current_mhz": 3593,
+    "l2_kb": 3072,
+    "l3_kb": 32768,
+    "os": "Microsoft Windows 11 Pro",
+    "build": "26200",
+    "ram_gb": 31.9,
+    "battery": false,
+    "on_ac": true,
+    "power_plan": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)"
+  },
+  "isolation": "none (Windows); process priority class HIGH while pinned",
+  "perf": "not available on Windows (use Intel VTune / AMD uProf for counters)",
+  "mem_total": "31.9 GB",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "matplotlib": "3.11.2"
+}

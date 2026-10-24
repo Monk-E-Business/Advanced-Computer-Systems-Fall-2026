@@ -1,0 +1,37 @@
+# Vectorization verification
+
+Each cell: **disassembly verdict** (widest packed register in the hottest loop) / compiler report.
+
+| function | scalar | scalar_native | sse2 | avx2 | native |
+|---|---|---|---|---|---|
+| `dot_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256 (+shuffles)**<br><sub>32B (+16B epilogue)</sub> | **vector-256 (+shuffles)**<br><sub>32B (+16B epilogue)</sub> |
+| `dot_f64` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B</sub> |
+| `dot_i32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `dotsimd_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B</sub> | **vector-256**<br><sub>32B</sub> |
+| `dotsimd_f64` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B</sub> | **vector-256**<br><sub>32B</sub> |
+| `dotsimd_i32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `mul_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B (+8B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `mul_f64` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `mul_i32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `read_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B</sub> | **vector-256**<br><sub>32B</sub> |
+| `saxpy_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B (+8B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `saxpy_f64` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `saxpy_gather_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-128**<br><sub>16B</sub> | **vector-128**<br><sub>16B</sub> |
+| `saxpy_i32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `saxpy_s16_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>✗ single-element interleaving not supported for not adjacent vector loads, using elementwise</sub> | **scalar**<br><sub>✗ single-element interleaving not supported for not adjacent vector loads, using elementwise</sub> | **scalar**<br><sub>✗ single-element interleaving not supported for not adjacent vector loads, using elementwise</sub> |
+| `saxpy_s1_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B (+8B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `saxpy_s2_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128 (+shuffles)**<br><sub>16B</sub> | **vector-256 (+shuffles)**<br><sub>32B (+16B epilogue)</sub> | **vector-256 (+shuffles)**<br><sub>32B (+16B epilogue)</sub> |
+| `saxpy_s4_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128 (+shuffles)**<br><sub>16B</sub> | **vector-256 (+shuffles)**<br><sub>32B (+16B epilogue)</sub> | **vector-256 (+shuffles)**<br><sub>32B</sub> |
+| `saxpy_s8_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>✗ single-element interleaving not supported for not adjacent vector loads, using elementwise</sub> | **scalar**<br><sub>✗ permutation not supported, using elementwise access</sub> | **vector-256 (+shuffles)**<br><sub>32B</sub> |
+| `stencil_f32` | **vector-128**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B (+8B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `stencil_f64` | **vector-128**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `stencil_i32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128 (+shuffles)**<br><sub>16B</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+| `write_f32` | **scalar**<br><sub>vectorizer disabled by flags</sub> | **scalar**<br><sub>vectorizer disabled by flags</sub> | **vector-128**<br><sub>16B</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> | **vector-256**<br><sub>32B (+16B epilogue)</sub> |
+
+Flags per variant:
+
+- `scalar`: `-O3 -fno-tree-vectorize -fno-tree-slp-vectorize`
+- `scalar_native`: `-O3 -march=native -fno-tree-vectorize -fno-tree-slp-vectorize`
+- `sse2`: `-O3 -fopenmp-simd`
+- `avx2`: `-O3 -march=x86-64-v3 -fopenmp-simd`
+- `native`: `-O3 -march=native -fopenmp-simd`

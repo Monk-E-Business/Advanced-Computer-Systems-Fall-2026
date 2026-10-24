@@ -1,0 +1,35 @@
+{
+  "cpu": "AMD Ryzen 5 3600 6-Core Processor              ",
+  "cores": 6,
+  "logical": 12,
+  "max_mhz": 3593,
+  "current_mhz": 3593,
+  "l2_kb": 3072,
+  "l3_kb": 32768,
+  "os": "Microsoft Windows 11 Pro",
+  "build": "26200",
+  "ram_gb": 31.9,
+  "battery": false,
+  "on_ac": true,
+  "power_plan": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)"
+}
+
+### compiler
+CXX=g++
+g++.exe (Rev4, Built by MSYS2 project) 16.2.0
+family=gcc
+target=x86_64-w64-mingw32
+arch=x86_64
+windows=1
+msystem=UCRT64
+harness_flags=-O2 -fno-tree-vectorize -fno-tree-slp-vectorize -ffp-contract=off -Wa,-muse-unaligned-vector-move
+kernel_common_flags=-std=c++17 -Wall -Wextra -g -falign-functions=64 -falign-loops=64
+extra_flags=-Wa,-muse-unaligned-vector-move -static
+assembler=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.2.0/../../../../x86_64-w64-mingw32/bin/as.exe GNU assembler (GNU Binutils) 2.47.20260726
+
+### g++ -v
+unavailable: Using built-in specs.
+COLLECT_GCC=g++
+COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.2.0/lto-wrapper.exe
+Target: x86_64-w64-mingw32
+Configured with: ../gcc-16.2.0/configure 

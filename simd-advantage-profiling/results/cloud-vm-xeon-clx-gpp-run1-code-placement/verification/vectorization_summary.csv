@@ -1,0 +1,139 @@
+variant,function,compiler_report,disasm_verdict,packed_fp,scalar_fp,int_vec,gathers,masked,shuffles,vec_mem,width,loop_len,total_instr
+scalar,dot_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,6,19
+scalar,dot_f64,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,6,19
+scalar,dot_i32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,6,19
+scalar,dotsimd_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,6,19
+scalar,dotsimd_f64,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,6,19
+scalar,dotsimd_i32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,6,19
+scalar,mul_f32,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,13
+scalar,mul_f64,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,13
+scalar,mul_i32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,6,13
+scalar,read_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,5,23
+scalar,saxpy_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,14
+scalar,saxpy_f64,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,14
+scalar,saxpy_gather_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,8,15
+scalar,saxpy_i32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,6,13
+scalar,saxpy_s16_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,15
+scalar,saxpy_s1_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,14
+scalar,saxpy_s2_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,14
+scalar,saxpy_s4_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,15
+scalar,saxpy_s8_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,15
+scalar,stencil_f32,vectorizer disabled by flags,scalar,0,5,0,0,0,0,0,0,13,54
+scalar,stencil_f64,vectorizer disabled by flags,scalar,0,5,0,0,0,0,0,0,13,56
+scalar,stencil_i32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,14,70
+scalar,write_f32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,5,20
+scalar_native,dot_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,26
+scalar_native,dot_f64,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,26
+scalar_native,dot_i32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,6,19
+scalar_native,dotsimd_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,26
+scalar_native,dotsimd_f64,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,7,26
+scalar_native,dotsimd_i32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,6,19
+scalar_native,mul_f32,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,13
+scalar_native,mul_f64,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,13
+scalar_native,mul_i32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,6,13
+scalar_native,read_f32,vectorizer disabled by flags,scalar,0,2,0,0,0,0,0,0,5,23
+scalar_native,saxpy_f32,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,13
+scalar_native,saxpy_f64,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,13
+scalar_native,saxpy_gather_f32,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,7,13
+scalar_native,saxpy_i32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,6,13
+scalar_native,saxpy_s16_f32,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,14
+scalar_native,saxpy_s1_f32,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,13
+scalar_native,saxpy_s2_f32,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,13
+scalar_native,saxpy_s4_f32,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,14
+scalar_native,saxpy_s8_f32,vectorizer disabled by flags,scalar,0,1,0,0,0,0,0,0,6,14
+scalar_native,stencil_f32,vectorizer disabled by flags,scalar,0,3,0,0,0,0,0,0,10,44
+scalar_native,stencil_f64,vectorizer disabled by flags,scalar,0,3,0,0,0,0,0,0,10,44
+scalar_native,stencil_i32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,14,70
+scalar_native,write_f32,vectorizer disabled by flags,scalar,0,0,0,0,0,0,0,0,5,20
+sse2,dot_f32,vectorized 16B,vector-128,1,4,0,0,0,3,2,128,15,55
+sse2,dot_f64,vectorized 16B,vector-128,1,2,0,0,0,1,2,128,9,34
+sse2,dot_i32,vectorized 16B,vector-128,0,0,3,0,0,2,4,128,15,63
+sse2,dotsimd_f32,vectorized 16B,vector-128,2,0,0,0,0,0,2,128,7,62
+sse2,dotsimd_f64,vectorized 16B,vector-128,2,0,0,0,0,0,2,128,7,45
+sse2,dotsimd_i32,vectorized 16B,vector-128,0,0,3,0,0,2,4,128,15,73
+sse2,mul_f32,vectorized 16B (+8B epilogue),vector-128,1,0,0,0,0,0,3,128,7,38
+sse2,mul_f64,vectorized 16B,vector-128,1,0,0,0,0,0,3,128,7,27
+sse2,mul_i32,vectorized 16B,vector-128,0,0,2,0,0,2,5,128,15,53
+sse2,read_f32,vectorized 16B,vector-128,1,0,0,0,0,0,1,128,5,56
+sse2,saxpy_f32,vectorized 16B (+8B epilogue),vector-128,2,0,0,0,0,0,3,128,8,49
+sse2,saxpy_f64,vectorized 16B,vector-128,2,0,0,0,0,0,3,128,8,31
+sse2,saxpy_gather_f32,vectorized 16B (+8B epilogue),vector-128,2,0,0,0,0,3,2,128,19,72
+sse2,saxpy_i32,vectorized 16B,vector-128,0,0,3,0,0,2,4,128,14,53
+sse2,saxpy_s16_f32,NOT vectorized: single-element interleaving not supported for not adjacent vector loads,scalar,0,2,0,0,0,0,0,0,7,15
+sse2,saxpy_s1_f32,vectorized 16B (+8B epilogue),vector-128,2,0,0,0,0,0,3,128,8,49
+sse2,saxpy_s2_f32,vectorized 16B,vector-128 (+shuffles),2,0,0,0,0,5,4,128,21,73
+sse2,saxpy_s4_f32,vectorized 16B,vector-128 (+shuffles),2,0,0,0,0,9,8,128,29,84
+sse2,saxpy_s8_f32,NOT vectorized: single-element interleaving not supported for not adjacent vector loads,scalar,0,2,0,0,0,0,0,0,7,15
+sse2,stencil_f32,vectorized 16B (+8B epilogue),vector-128,5,0,0,0,0,0,4,128,12,77
+sse2,stencil_f64,vectorized 16B,vector-128,5,0,0,0,0,0,3,128,13,52
+sse2,stencil_i32,vectorized 16B,vector-128 (+shuffles),0,0,8,0,0,6,7,128,30,107
+sse2,write_f32,vectorized 16B,vector-128,0,0,0,0,0,0,2,128,5,43
+avx2,dot_f32,vectorized 32B (+16B epilogue),vector-256 (+shuffles),1,8,0,0,0,7,1,256,20,80
+avx2,dot_f64,vectorized 32B (+16B epilogue),vector-256,1,4,0,0,0,3,1,256,12,54
+avx2,dot_i32,vectorized 32B (+16B epilogue),vector-256,0,0,2,0,0,0,1,256,6,78
+avx2,dotsimd_f32,vectorized 32B,vector-256,2,0,0,0,0,0,1,256,6,92
+avx2,dotsimd_f64,vectorized 32B,vector-256,2,0,0,0,0,0,1,256,6,64
+avx2,dotsimd_i32,vectorized 32B,vector-256,0,0,2,0,0,0,1,256,6,96
+avx2,mul_f32,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,2,256,6,61
+avx2,mul_f64,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,2,256,6,41
+avx2,mul_i32,vectorized 32B (+16B epilogue),vector-256,0,0,1,0,0,0,2,256,6,61
+avx2,read_f32,vectorized 32B,vector-256,1,0,0,0,0,0,0,256,4,84
+avx2,saxpy_f32,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,2,256,6,64
+avx2,saxpy_f64,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,2,256,6,46
+avx2,saxpy_gather_f32,vectorized 32B (+16B epilogue),vector-256 (+shuffles),1,0,0,0,0,7,1,256,25,119
+avx2,saxpy_i32,vectorized 32B (+16B epilogue),vector-256,0,0,2,0,0,0,1,256,6,65
+avx2,saxpy_s16_f32,NOT vectorized: single-element interleaving not supported for not adjacent vector loads,scalar,0,1,0,0,0,0,0,0,6,14
+avx2,saxpy_s1_f32,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,2,256,6,64
+avx2,saxpy_s2_f32,vectorized 32B (+16B epilogue),vector-256 (+shuffles),1,0,0,0,0,13,0,256,20,89
+avx2,saxpy_s4_f32,vectorized 32B (+16B epilogue),vector-256 (+shuffles),1,0,0,0,0,25,0,256,32,110
+avx2,saxpy_s8_f32,vectorized 32B,vector-256 (+shuffles),1,0,0,0,0,49,0,256,56,138
+avx2,stencil_f32,vectorized 32B (+16B epilogue),vector-256,3,0,0,0,0,0,1,256,7,80
+avx2,stencil_f64,vectorized 32B (+16B epilogue),vector-256,3,0,0,0,0,0,1,256,7,60
+avx2,stencil_i32,vectorized 32B (+16B epilogue),vector-256,0,0,5,0,0,0,1,256,9,118
+avx2,write_f32,vectorized 32B (+16B epilogue),vector-256,0,0,0,0,0,0,2,256,5,60
+native,dot_f32,vectorized 32B (+16B epilogue),vector-256 (+shuffles),1,8,0,0,0,4,1,256,20,81
+native,dot_f64,vectorized 32B (+16B epilogue),vector-256,1,4,0,0,0,2,1,256,12,55
+native,dot_i32,vectorized 32B (+16B epilogue),vector-256,0,0,2,0,0,0,1,256,6,78
+native,dotsimd_f32,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,1,256,5,92
+native,dotsimd_f64,vectorized 32B,vector-256,1,0,0,0,0,0,1,256,5,63
+native,dotsimd_i32,vectorized 32B (+16B epilogue),vector-256,0,0,2,0,0,0,1,256,6,96
+native,mul_f32,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,2,256,6,61
+native,mul_f64,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,2,256,6,41
+native,mul_i32,vectorized 32B (+16B epilogue),vector-256,0,0,1,0,0,0,2,256,6,61
+native,read_f32,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,0,256,4,84
+native,saxpy_f32,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,2,256,6,67
+native,saxpy_f64,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,2,256,6,46
+native,saxpy_gather_f32,vectorized 32B (+16B epilogue),vector-256 (+shuffles),1,0,0,0,0,7,1,256,25,117
+native,saxpy_i32,vectorized 32B (+16B epilogue),vector-256,0,0,2,0,0,0,1,256,6,63
+native,saxpy_s16_f32,NOT vectorized: single-element interleaving not supported for not adjacent vector loads,scalar,0,1,0,0,0,0,0,0,6,14
+native,saxpy_s1_f32,vectorized 32B (+16B epilogue),vector-256,1,0,0,0,0,0,2,256,6,67
+native,saxpy_s2_f32,vectorized 32B (+16B epilogue),vector-256 (+shuffles),1,0,0,0,0,6,2,256,21,88
+native,saxpy_s4_f32,vectorized 32B (+16B epilogue),vector-256 (+shuffles),1,0,0,0,0,10,4,256,27,102
+native,saxpy_s8_f32,vectorized 32B,vector-256 (+shuffles),1,0,0,0,0,18,8,256,39,117
+native,stencil_f32,vectorized 32B (+16B epilogue),vector-256,3,0,0,0,0,0,1,256,7,79
+native,stencil_f64,vectorized 32B (+16B epilogue),vector-256,3,0,0,0,0,0,1,256,7,58
+native,stencil_i32,vectorized 32B (+16B epilogue),vector-256,0,0,5,0,0,0,1,256,9,113
+native,write_f32,vectorized 32B (+16B epilogue),vector-256,0,0,0,0,0,0,2,256,5,59
+avx512,dot_f32,vectorized 64B (+32B epilogue),vector-512 (+shuffles),1,16,0,0,0,9,1,512,36,124
+avx512,dot_f64,vectorized 64B (+32B epilogue),vector-512 (+shuffles),1,8,0,0,0,5,1,512,20,81
+avx512,dot_i32,vectorized 64B (+32B epilogue),vector-512,0,0,2,0,0,0,1,512,6,107
+avx512,dotsimd_f32,vectorized 64B (+32B epilogue),vector-512,1,0,0,0,0,0,1,512,5,149
+avx512,dotsimd_f64,vectorized 64B (+32B epilogue),vector-512,1,0,0,0,0,0,1,512,5,93
+avx512,dotsimd_i32,vectorized 64B (+32B epilogue),vector-512,0,0,2,0,0,0,1,512,6,159
+avx512,mul_f32,vectorized 64B (+32B epilogue),vector-512,1,0,0,0,0,0,2,512,6,86
+avx512,mul_f64,vectorized 64B (+32B epilogue),vector-512,1,0,0,0,0,0,2,512,6,62
+avx512,mul_i32,vectorized 64B (+32B epilogue),vector-512,0,0,1,0,0,0,2,512,6,86
+avx512,read_f32,vectorized 64B (+32B epilogue),vector-512,1,0,0,0,0,0,0,512,4,136
+avx512,saxpy_f32,vectorized 64B (+32B epilogue),vector-512,1,0,0,0,0,0,2,512,6,93
+avx512,saxpy_f64,vectorized 64B (+32B epilogue),vector-512,1,0,0,0,0,0,2,512,6,66
+avx512,saxpy_gather_f32,vectorized 64B (+32B epilogue),vector-512 (+shuffles),1,0,0,0,0,15,1,512,56,200
+avx512,saxpy_i32,vectorized 64B (+32B epilogue),vector-512,0,0,2,0,0,0,1,512,6,87
+avx512,saxpy_s16_f32,vectorized 64B,vector-512 (+shuffles),1,0,0,0,0,39,16,512,76,211
+avx512,saxpy_s1_f32,vectorized 64B (+32B epilogue),vector-512,1,0,0,0,0,0,2,512,6,93
+avx512,saxpy_s2_f32,vectorized 64B (+32B epilogue),vector-512 (+shuffles),1,0,0,0,0,11,2,512,34,143
+avx512,saxpy_s4_f32,vectorized 64B (+32B epilogue),vector-512 (+shuffles),1,0,0,0,0,15,4,512,40,157
+avx512,saxpy_s8_f32,vectorized 64B (+32B epilogue),vector-512 (+shuffles),1,0,0,0,0,23,8,512,52,180
+avx512,stencil_f32,vectorized 64B (+32B epilogue),vector-512,3,0,0,0,0,0,1,512,7,112
+avx512,stencil_f64,vectorized 64B (+32B epilogue),vector-512,3,0,0,0,0,0,1,512,7,79
+avx512,stencil_i32,vectorized 64B (+32B epilogue),vector-512,0,0,5,0,0,0,1,512,9,162
+avx512,write_f32,vectorized 64B (+32B epilogue),vector-512,0,0,0,0,0,0,2,512,5,76
