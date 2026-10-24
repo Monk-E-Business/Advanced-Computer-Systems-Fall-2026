@@ -1,0 +1,5 @@
+footprint,kernel,mul,seq,1,4k,18874368,786432,2,0,276,184602600,0.85049,28.2191,3.4207,0,1,nan,nan,nan,nan,nan,nan,nan
+footprint,kernel,mul,seq,1,4k,18874368,786432,2,1,276,188700000,0.86936,27.6064,3.4207,0,1,nan,nan,nan,nan,nan,nan,nan
+footprint,kernel,mul,seq,1,4k,18874368,786432,2,2,276,193122000,0.88974,26.9743,3.4207,0,1,nan,nan,nan,nan,nan,nan,nan
+footprint,kernel,mul,seq,1,4k,18874368,786432,2,3,276,185859400,0.85628,28.0283,3.4207,0,1,nan,nan,nan,nan,nan,nan,nan
+footprint,kernel,mul,seq,1,4k,18874368,786432,2,4,276,196282900,0.90430,26.5399,3.4207,0,1,nan,nan,nan,nan,nan,nan,nan

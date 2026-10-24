@@ -1,0 +1,6 @@
+bin/
+bin-win/
+__pycache__/
+*.pyc
+data/*.log
+data/.env_backup_windows

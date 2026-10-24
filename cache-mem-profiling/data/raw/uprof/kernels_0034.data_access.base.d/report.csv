@@ -1,0 +1,100 @@
+
+"AMD uProf (Version:5.3.521.0)"
+PERFORMANCE ANALYSIS REPORT
+
+EXECUTION
+Target Path:,"C:\msys64\home\Brendan-NewPc\cache-mem-profiling\bin\kernels.exe"
+Command Line Arguments:,"--kernel mul --size 768M --order stride --stride 1 --pages 4k --cpu 2 --reps 5 --ms 200 --perf --label locality --reps 0 --meta C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\kernels_0034.data_access.base.meta "
+Working Directory:,"C:\msys64\home\Brendan-NewPc\cache-mem-profiling"
+Environment Variables:
+CPU Details:,"Family(0x17), Model(0x71), Number of Cores(12)"
+Operating System:,"Win1125H2-64"
+Collect Command:,"AMDuProfCLI.exe collect --config data_access -o C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\kernels_0034.data_access.base.d C:\msys64\home\Brendan-NewPc\cache-mem-profiling\bin\kernels.exe --kernel mul --size 768M --order stride --stride 1 --pages 4k --cpu 2 --reps 5 --ms 200 --perf --label locality --reps 0 --meta C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\kernels_0034.data_access.base.meta"
+Report Command:,"AMDuProfCLI.exe report -i C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\kernels_0034.data_access.base.d\AMDuProf-kernels-EBP_Oct-23-2026_19-33-32"
+
+PROFILE DETAILS
+Profile Session Type:,"Investigate Data Access"
+Profile Scope:,"Single Application"
+CPU Mask:,"0-11"
+CPU Affinity Mask:,"0-11"
+Profile Start Time:,"Fri Oct 23 19:33:33 2026"
+Profile End Time:,"Fri Oct 23 19:33:34 2026"
+Profile Duration:,"1.555 seconds"
+Data Folder:,"C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\kernels_0034.data_access.base.d\AMDuProf-kernels-EBP_Oct-23-2026_19-33-32"
+Virtual Machine:,"No"
+Call Stack Sampling:,"False"
+Selected View:,"Data Cache (Detailed)"
+
+MONITORED EVENTS
+PMC Events:,Name,Interval,Unitmask,Countmask,Invert Countmask,User,OS,Description
+,"MISALIGNED_LOADS (PMCx047)",25000,0x00,0x00,False,True,True,"The number of misaligned loads. On Zen3, this predefined counts the 64B (cacheline crossing) and 4K (page crossing) misaligned loads."
+,"CYCLES_NOT_IN_HALT (PMCx076)",250000,0x00,0x00,False,True,True,"The number of cpu cycles when the thread is not in halt state."
+,"RETIRED_INST (PMCx0C0)",250000,0x00,0x00,False,True,True,"The number of instructions retired from execution. This count includes exceptions and interrupts. Each exception or interrupt is counted as one instruction."
+,"L1_DEMAND_DC_REFILLS_LOCAL_L2 (PMCx043)",25000,0x01,0x00,False,True,True,"Counts all L2 Prefetches accepted by L2 pipeline which hit in the L2 Cache."
+,"L1_DEMAND_DC_REFILLS_LOCAL_CACHE (PMCx043)",25000,0x02,0x00,False,True,True,"The demand Data Cache (DC) fills from same the cache of same CCX or cache of different CCX in the same package (node)."
+,"L1_DC_ACCESSES_ALL (PMCx029)",250000,0x07,0x00,False,True,True,"The number of load and store ops dispatched to LS unit. This counts the dispatch of single op that performs a memory load, dispatch of single op that performs a memory store, dispatch of a single op that performs a load from and store to the same memory address."
+,"L1_DEMAND_DC_REFILLS_LOCAL_DRAM (PMCx043)",25000,0x08,0x00,False,True,True,"The demand Data Cache (DC) fills from DRAM or IO connected in the same package (node)."
+,"L2_CACHE_ACCESS_FROM_L1_DC_MISS (PMCx060)",25000,0xC8,0x00,False,True,True,"The L2 cache access requests due to L1 data cache misses. This also counts hardware and software prefetches."
+,"L2_DTLB_MISSES (PMCx045)",25000,0xF0,0x00,False,True,True,"The L2 Data Translation Lookaside Buffer (DTLB) Missed from load store micro-ops."
+,"L1_DTLB_MISSES (PMCx045)",25000,0xFF,0x00,False,True,True,"The L1 Data Translation Lookaside Buffer (DTLB) Misses from load store micro-ops. This predefined counts both L2-DTLB hit and L2-DTLB Miss."
+
+
+DERIVED METRICS
+Metric Name,Expression,Description
+"CPI","CYCLES_NOT_IN_HALT / RETIRED_INST","The average number of CPU cycles consumed to retire an instruction. This metric is computed as the ratio of CYCLES_NOT_IN_HALT to RETIRED_INST event. The higher values means the application consumes more CPU cycles to retire an instruction due to high cache misses, branch mispredictions, pipeline stalls, I/O or any other bottlenecks. If the CPI values exceeds a threshold value, it will be highlighted in pink."
+"L1_DC_ACCESSES (PTI)","( L1_DC_ACCESSES_ALL * 1000 ) / RETIRED_INST","The number of load and store operations per thousand instructions. This counts the dispatch of single op that performs a memory load, dispatch of single op that performs a memory store, dispatch of a single op that performs a load from and store to the same memory address"
+"%L1_DC_MISSES","( L2_CACHE_ACCESS_FROM_L1_DC_MISS * 100 ) / L1_DC_ACCESSES_ALL","The percentage of L2 cache access requests due to L1 data cache misses with respect to the total number of load and store operations. This also counts the hardware and software prefetches."
+"L1_DEMAND_DC_REFILLS_LOCAL_DRAM (PTI)","( L1_DEMAND_DC_REFILLS_LOCAL_DRAM * 1000 ) / RETIRED_INST","The number of demand data cache (DC) fills per thousand retired instructions. These demand DC fills are from DRAM or IO connected in the same package (node)."
+"L1_DEMAND_DC_REFILLS_LOCAL_CACHE (PTI)","( L1_DEMAND_DC_REFILLS_LOCAL_CACHE * 1000 ) / RETIRED_INST","The number of demand data cache (DC) fills per thousand retired instructions. These demand DC fills are from same the cache of same CCX or cache of different CCX in the same package (node)."
+"L1_DEMAND_DC_REFILLS_LOCAL_L2 (PTI)","( L1_DEMAND_DC_REFILLS_LOCAL_L2 * 1000 ) / RETIRED_INST","The number of demand data cache (DC) fills per thousand retired instructions. These DC fills are from local L2 cache to the core."
+"%L1_DEMAND_DC_REFILLS_LOCAL_DRAM","( L1_DEMAND_DC_REFILLS_LOCAL_DRAM * 100 ) / L1_DC_ACCESSES_ALL","Percentage of L1 demand data cache (DC) fills from Local DRAM, with respect to all Data Cache accesses."
+"%L1_DEMAND_DC_REFILLS_LOCAL_CACHE","( L1_DEMAND_DC_REFILLS_LOCAL_CACHE * 100 ) / L1_DC_ACCESSES_ALL","Percentage of L1 demand data cache (DC) fills from Local Cache, with respect to all Data Cache accesses."
+"%L1_DEMAND_DC_REFILLS_LOCAL_L2","( L1_DEMAND_DC_REFILLS_LOCAL_L2 * 100 ) / L1_DC_ACCESSES_ALL","Percentage of L1 demand data cache (DC) fills from Local L2, with respect to all Data Cache accesses."
+"MISALIGNED_LOADS (PTI)","( MISALIGNED_LOADS * 1000 ) / RETIRED_INST","The number of misaligned loads per thousand retired instructions."
+"L1_DTLB_MISSES (PTI)","( L1_DTLB_MISSES * 1000 ) / RETIRED_INST","The number of L1 Data Translation Lookaside buffer (DTLB) misses from load-store micro-ops."
+"L2_DTLB_MISSES (PTI)","(L2_DTLB_MISSES * 1000) / RETIRED_INST","The number of L2 DTLB misses, per thousand retired instructions."
+"L1_DC_ACCESS_RATE","L1_DC_ACCESSES_ALL / RETIRED_INST","The L1 Data Cache access rate is the number of L1 Data Cache accesses divided by the total number of retired instructions."
+"L1_DC_MISS_RATE","L2_CACHE_ACCESS_FROM_L1_DC_MISS / RETIRED_INST","The L1 Data Cache miss rate is the number of L1 Data Cache misses divided by the total number of retired instructions."
+"L1_DC_MISS_RATIO","L2_CACHE_ACCESS_FROM_L1_DC_MISS / L1_DC_ACCESSES_ALL","The L1 Data Cache miss ratio is the number of L1 Data Cache misses divided by the total number of L1 Data Cache accesses."
+"L1_DTLB_MISS_RATE","L1_DTLB_MISSES / RETIRED_INST","The DTLB L1 miss rate is the number of DTLB L1 misses divided by the total number of retired instructions."
+"L2_DTLB_MISS_RATE","L2_DTLB_MISSES / RETIRED_INST","The L2 DTLB miss rate is the number of L2 DTLB misses divided by the total number of retired instructions."
+
+
+APPLICATION PERFORMANCE SNAPSHOT
+Thread Count,"4"
+
+
+"10 HOTTEST FUNCTIONS (Sort Event - CYCLES_NOT_IN_HALT)"
+FUNCTION,"CYCLES_NOT_IN_HALT","RETIRED_INST","CPI","L1_DC_ACCESSES (PTI)","%L1_DC_MISSES","L1_DEMAND_DC_REFILLS_LOCAL_DRAM (PTI)","L1_DEMAND_DC_REFILLS_LOCAL_CACHE (PTI)","L1_DEMAND_DC_REFILLS_LOCAL_L2 (PTI)","%L1_DEMAND_DC_REFILLS_LOCAL_DRAM","%L1_DEMAND_DC_REFILLS_LOCAL_CACHE","%L1_DEMAND_DC_REFILLS_LOCAL_L2","MISALIGNED_LOADS (PTI)","L1_DTLB_MISSES (PTI)","L2_DTLB_MISSES (PTI)","L1_DC_ACCESS_RATE","L1_DC_MISS_RATE","L1_DC_MISS_RATIO","L1_DTLB_MISS_RATE","L2_DTLB_MISS_RATE",Module
+"kernels.exe!0x14000152b",350.0000,126.0000,2.7778,500.0000,54.1270,112.6984,2.3810,98.4127,22.5397,0.4762,19.6825,0.0000,0.7937,0.7937,0.5000,0.2706,0.5413,0.0008,0.0008,"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe"
+"ucrtbase.dll!0x1800edfb3",340.0000,80.0000,4.2500,675.0000,0.1852,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,7.5000,6.2500,0.6750,0.0013,0.0019,0.0075,0.0063,"c:\windows\system32\ucrtbase.dll"
+"kernels.exe!0x1400018da",334.0000,1177.0000,0.2838,101.1045,12.8571,0.0850,0.0000,0.0000,0.0840,0.0000,0.0000,0.0000,0.0850,0.0000,0.1011,0.0130,0.1286,0.0001,0.0000,"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe"
+"kernels.exe!0x140001526",332.0000,118.0000,2.8136,584.7458,38.9855,99.1525,0.8475,93.2203,16.9565,0.1449,15.9420,0.0000,1.6949,1.6949,0.5847,0.2280,0.3899,0.0017,0.0017,"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe"
+"kernels.exe!0x1400018ec",239.0000,869.0000,0.2750,104.7181,9.1209,0.0000,0.1151,0.1151,0.0000,0.1099,0.1099,0.0000,0.1151,0.0000,0.1047,0.0096,0.0912,0.0001,0.0000,"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe"
+"kernels.exe!0x140001531",137.0000,50.0000,2.7400,480.0000,47.5000,116.0000,0.0000,116.0000,24.1667,0.0000,24.1667,0.0000,2.0000,0.0000,0.4800,0.2280,0.4750,0.0020,0.0000,"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe"
+"kernels.exe!0x1400018c4",126.0000,408.0000,0.3088,93.1373,14.2105,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0931,0.0132,0.1421,0.0000,0.0000,"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe"
+"kernels.exe!0x14003c804",126.0000,506.0000,0.2490,25.6917,16.1538,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.1976,0.0257,0.0042,0.1615,0.0000,0.0002,"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe"
+"ucrtbase.dll!0x1800edfa3",125.0000,32.0000,3.9062,531.2500,0.5882,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,6.2500,6.2500,0.5312,0.0031,0.0059,0.0063,0.0063,"c:\windows\system32\ucrtbase.dll"
+"kernels.exe!0x140001899",106.0000,327.0000,0.3242,122.3242,15.7500,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.1223,0.0193,0.1575,0.0000,0.0000,"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe"
+
+"10 HOTTEST PROCESSES (Sort Event - CYCLES_NOT_IN_HALT)"
+PROCESS,"CYCLES_NOT_IN_HALT","RETIRED_INST","CPI","L1_DC_ACCESSES (PTI)","%L1_DC_MISSES","L1_DEMAND_DC_REFILLS_LOCAL_DRAM (PTI)","L1_DEMAND_DC_REFILLS_LOCAL_CACHE (PTI)","L1_DEMAND_DC_REFILLS_LOCAL_L2 (PTI)","%L1_DEMAND_DC_REFILLS_LOCAL_DRAM","%L1_DEMAND_DC_REFILLS_LOCAL_CACHE","%L1_DEMAND_DC_REFILLS_LOCAL_L2","MISALIGNED_LOADS (PTI)","L1_DTLB_MISSES (PTI)","L2_DTLB_MISSES (PTI)","L1_DC_ACCESS_RATE","L1_DC_MISS_RATE","L1_DC_MISS_RATIO","L1_DTLB_MISS_RATE","L2_DTLB_MISS_RATE"
+"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe (PID:19152)",4475.0000,8455.0000,0.5293,167.0018,11.1402,3.9148,0.1301,3.6428,2.3442,0.0779,2.1813,0.0000,0.2720,0.2365,0.1670,0.0186,0.1114,0.0003,0.0002
+
+"10 HOTTEST MODULES (Sort Event - CYCLES_NOT_IN_HALT)"
+MODULE,"CYCLES_NOT_IN_HALT","RETIRED_INST","CPI","L1_DC_ACCESSES (PTI)","%L1_DC_MISSES","L1_DEMAND_DC_REFILLS_LOCAL_DRAM (PTI)","L1_DEMAND_DC_REFILLS_LOCAL_CACHE (PTI)","L1_DEMAND_DC_REFILLS_LOCAL_L2 (PTI)","%L1_DEMAND_DC_REFILLS_LOCAL_DRAM","%L1_DEMAND_DC_REFILLS_LOCAL_CACHE","%L1_DEMAND_DC_REFILLS_LOCAL_L2","MISALIGNED_LOADS (PTI)","L1_DTLB_MISSES (PTI)","L2_DTLB_MISSES (PTI)","L1_DC_ACCESS_RATE","L1_DC_MISS_RATE","L1_DC_MISS_RATIO","L1_DTLB_MISS_RATE","L2_DTLB_MISS_RATE"
+"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe",3094.0000,7198.0000,0.4298,126.5629,16.5971,4.5707,0.0695,4.0984,3.6114,0.0549,3.2382,0.0000,0.0972,0.0695,0.1266,0.0210,0.1660,0.0001,0.0001
+"c:\windows\system32\ntoskrnl.exe",842.0000,1120.0000,0.7518,374.1071,1.3842,0.1786,0.5357,1.0714,0.0477,0.1432,0.2864,0.0000,0.6250,0.7143,0.3741,0.0052,0.0138,0.0006,0.0007
+"c:\windows\system32\ucrtbase.dll",525.0000,131.0000,4.0076,610.6870,0.2500,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,6.8702,5.3435,0.6107,0.0015,0.0025,0.0069,0.0053
+"c:\windows\system32\ntdll.dll",8.0000,5.0000,1.6000,200.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.2000,0.0000,0.0000,0.0000,0.0000
+"c:\windows\system32\drivers\ntfs.sys",2.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000
+"c:\windows\system32\drivers\fltmgr.sys",1.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000
+"c:\windows\system32\drivers\bfs.sys",1.0000,1.0000,1.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000
+"c:\windows\system32\drivers\farflt11.sys",1.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000
+"c:\windows\system32\drivers\cng.sys",1.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000
+"c:\windows\system32\kernel32.dll",0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000
+
+"10 HOTTEST THREADS (Sort Event - CYCLES_NOT_IN_HALT)"
+THREAD,"CYCLES_NOT_IN_HALT","RETIRED_INST","CPI","L1_DC_ACCESSES (PTI)","%L1_DC_MISSES","L1_DEMAND_DC_REFILLS_LOCAL_DRAM (PTI)","L1_DEMAND_DC_REFILLS_LOCAL_CACHE (PTI)","L1_DEMAND_DC_REFILLS_LOCAL_L2 (PTI)","%L1_DEMAND_DC_REFILLS_LOCAL_DRAM","%L1_DEMAND_DC_REFILLS_LOCAL_CACHE","%L1_DEMAND_DC_REFILLS_LOCAL_L2","MISALIGNED_LOADS (PTI)","L1_DTLB_MISSES (PTI)","L2_DTLB_MISSES (PTI)","L1_DC_ACCESS_RATE","L1_DC_MISS_RATE","L1_DC_MISS_RATIO","L1_DTLB_MISS_RATE","L2_DTLB_MISS_RATE",THREAD ID
+"Thread-12804 (PID:19152)",4474.0000,8455.0000,0.5292,167.0018,11.1402,3.9148,0.1301,3.6428,2.3442,0.0779,2.1813,0.0000,0.2720,0.2365,0.1670,0.0186,0.1114,0.0003,0.0002,"12804"
+"Thread-23844 (PID:19152)",1.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,"23844"

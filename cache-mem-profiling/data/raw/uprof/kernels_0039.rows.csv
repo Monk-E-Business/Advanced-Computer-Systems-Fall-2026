@@ -1,0 +1,5 @@
+locality,kernel,mul,stride,64,4k,805306368,33554432,2,0,1,592784200,17.66635,1.3585,3.4334,0,1,nan,nan,nan,nan,nan,nan,nan
+locality,kernel,mul,stride,64,4k,805306368,33554432,2,1,1,583780500,17.39801,1.3795,3.4334,0,1,nan,nan,nan,nan,nan,nan,nan
+locality,kernel,mul,stride,64,4k,805306368,33554432,2,2,1,589529200,17.56934,1.3660,3.4334,0,1,nan,nan,nan,nan,nan,nan,nan
+locality,kernel,mul,stride,64,4k,805306368,33554432,2,3,1,584990400,17.43407,1.3766,3.4334,0,1,nan,nan,nan,nan,nan,nan,nan
+locality,kernel,mul,stride,64,4k,805306368,33554432,2,4,1,584458800,17.41823,1.3779,3.4334,0,1,nan,nan,nan,nan,nan,nan,nan

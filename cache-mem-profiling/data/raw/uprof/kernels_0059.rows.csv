@@ -1,0 +1,5 @@
+footprint,kernel,saxpy,seq,1,4k,4718592,294912,2,0,2280,145934500,0.21704,110.5810,3.4729,0,1,nan,nan,nan,nan,nan,nan,nan
+footprint,kernel,saxpy,seq,1,4k,4718592,294912,2,1,2280,145846300,0.21690,110.6479,3.4729,0,1,nan,nan,nan,nan,nan,nan,nan
+footprint,kernel,saxpy,seq,1,4k,4718592,294912,2,2,2280,146231700,0.21748,110.3563,3.4729,0,1,nan,nan,nan,nan,nan,nan,nan
+footprint,kernel,saxpy,seq,1,4k,4718592,294912,2,3,2280,145863500,0.21693,110.6348,3.4729,0,1,nan,nan,nan,nan,nan,nan,nan
+footprint,kernel,saxpy,seq,1,4k,4718592,294912,2,4,2280,145851200,0.21691,110.6442,3.4729,0,1,nan,nan,nan,nan,nan,nan,nan

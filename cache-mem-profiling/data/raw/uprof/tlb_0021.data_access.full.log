@@ -1,0 +1,11 @@
+Profiling started
+Profiling (data collection) completed 
+Generated data files path: C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\tlb_0021.data_access.full.d\AMDuProf-latency-EBP_Oct-23-2026_19-48-27
+Translation started 
+TRANSLATION PROGRESS: 10% Translation done TRANSLATION PROGRESS: 20% Translation done TRANSLATION PROGRESS: 30% Translation done TRANSLATION PROGRESS: 40% Translation done TRANSLATION PROGRESS: 50% Translation done TRANSLATION PROGRESS: 60% Translation done TRANSLATION PROGRESS: 70% Translation done TRANSLATION PROGRESS: 80% Translation done TRANSLATION PROGRESS: 90% Translation done TRANSLATION PROGRESS: 100% Translation done TRANSLATION PROGRESS: 100% Translation done Translation finished: 
+Generated database file : callstack
+Generated database file : cpu
+Report generation started 
+Generating report file...
+Report generation completed...
+Generated report file: C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\tlb_0021.data_access.full.d\AMDuProf-latency-EBP_Oct-23-2026_19-48-27\report.csv

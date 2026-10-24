@@ -1,0 +1,48 @@
+  bw selftest seq read sum == n(n-1)/2 (fast path)               OK
+  bw selftest seq read sum == n(n-1)/2 (generic path)            OK
+  bw selftest stride-256 read sum matches closed form            OK
+  bw selftest seq write stores expected values                   OK
+  bw selftest non-temporal write stores expected values          OK
+  bw selftest mix 70/30 write fraction exact                     OK
+  bw selftest mix 70/30 generic path writes 300 of 1000 blocks   OK
+  bw selftest mix 50/50 write fraction exact                     OK
+  bw selftest mix 50/50 generic path writes 500 of 1000 blocks   OK
+  bw selftest random offsets in bounds and aligned               OK
+bandwidth selftest: OK
+latency check pattern=rand pages=4k size=65536 nodes=1024: OK
+latency check pattern=rand pages=4k size=8388608 nodes=131072: OK
+latency check pattern=seq pages=4k size=65536 nodes=1024: OK
+latency check pattern=seq pages=4k size=8388608 nodes=131072: OK
+latency check pattern=page pages=4k size=65536 nodes=16: OK
+latency check pattern=page pages=4k size=8388608 nodes=2048: OK
+latency check pattern=seq pages=4k size=1048576 nodes=4096: OK
+latency check pattern=seq pages=4k size=1048576 nodes=1024: OK
+latency check pattern=rand pages=4k size=4194304 nodes=65536: OK
+latency check pattern=rand pages=4k size=4194304 nodes=65536: OK
+latency check pattern=rand pages=4k size=4194304 nodes=65536: OK
+latency check pattern=rand pages=4k size=4194304 nodes=65536: OK
+latency check pattern=rand pages=4k size=8388608 nodes=131072: OK
+kernel check mul order=seq stride=1 pages=4k n=262144: OK
+kernel check mul order=stride stride=8 pages=4k n=262144: OK
+kernel check mul order=stride stride=512 pages=4k n=262144: OK
+kernel check mul order=rand stride=1 pages=4k n=262144: OK
+kernel check saxpy order=seq stride=1 pages=4k n=393216: OK
+kernel check saxpy order=stride stride=8 pages=4k n=393216: OK
+kernel check saxpy order=stride stride=512 pages=4k n=393216: OK
+kernel check saxpy order=rand stride=1 pages=4k n=393216: OK
+latency check pattern=rand pages=thp size=8388608 nodes=131072: OK
+kernel check mul order=seq stride=1 pages=thp n=262144: OK
+kernel check mul order=stride stride=8 pages=thp n=262144: OK
+kernel check mul order=stride stride=512 pages=thp n=262144: OK
+kernel check mul order=rand stride=1 pages=thp n=262144: OK
+kernel check saxpy order=seq stride=1 pages=thp n=393216: OK
+kernel check saxpy order=stride stride=8 pages=thp n=393216: OK
+kernel check saxpy order=stride stride=512 pages=thp n=393216: OK
+kernel check saxpy order=rand stride=1 pages=thp n=393216: OK
+thp check: 64 MiB buffer backed by 65536 kB of huge pages (expect ~65536)
+4K check:  64 MiB buffer backed by 0 kB of huge pages (expect 0)
+generic-loop ceiling (L2-resident, 1 thread) read_pct=100: 41.4060 GB/s
+generic-loop ceiling (L2-resident, 1 thread) read_pct=70: 39.1182 GB/s
+generic-loop ceiling (L2-resident, 1 thread) read_pct=50: 35.9445 GB/s
+generic-loop ceiling (L2-resident, 1 thread) read_pct=0: 32.3168 GB/s
+monotonic clock: clock_gettime(CLOCK_MONOTONIC) resolution 1e-09 s

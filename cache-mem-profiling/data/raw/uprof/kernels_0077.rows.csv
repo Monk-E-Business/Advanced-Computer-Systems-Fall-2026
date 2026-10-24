@@ -1,0 +1,5 @@
+locality,kernel,saxpy,stride,4,4k,805306368,50331648,2,0,1,208405900,4.14065,5.7962,3.4754,0,1,nan,nan,nan,nan,nan,nan,nan
+locality,kernel,saxpy,stride,4,4k,805306368,50331648,2,1,1,204879100,4.07058,5.8960,3.4754,0,1,nan,nan,nan,nan,nan,nan,nan
+locality,kernel,saxpy,stride,4,4k,805306368,50331648,2,2,1,202522200,4.02375,5.9646,3.4754,0,1,nan,nan,nan,nan,nan,nan,nan
+locality,kernel,saxpy,stride,4,4k,805306368,50331648,2,3,1,202743700,4.02816,5.9581,3.4754,0,1,nan,nan,nan,nan,nan,nan,nan
+locality,kernel,saxpy,stride,4,4k,805306368,50331648,2,4,1,204818500,4.06938,5.8977,3.4754,0,1,nan,nan,nan,nan,nan,nan,nan

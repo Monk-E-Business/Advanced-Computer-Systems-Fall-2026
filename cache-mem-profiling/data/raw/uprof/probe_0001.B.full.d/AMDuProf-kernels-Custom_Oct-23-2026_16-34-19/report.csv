@@ -1,0 +1,71 @@
+
+"AMD uProf (Version:5.3.521.0)"
+PERFORMANCE ANALYSIS REPORT
+
+EXECUTION
+Target Path:,"C:\msys64\home\Brendan-NewPc\cache-mem-profiling\bin\kernels.exe"
+Command Line Arguments:,"--kernel mul --size 256M --order stride --stride 1 --cpu 2 --reps 2 --ms 300 --label probe "
+Working Directory:,"C:\msys64\home\Brendan-NewPc\cache-mem-profiling"
+Environment Variables:
+CPU Details:,"Family(0x17), Model(0x71), Number of Cores(12)"
+Operating System:,"Win1125H2-64"
+Collect Command:,"AMDuProfCLI.exe collect -e event=pmcx076,interval=250000 -e event=pmcx043,umask=0x02,interval=25000 -e event=pmcx043,umask=0x01,interval=25000 -e event=pmcx045,umask=0xff,interval=25000 -o C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\probe_0001.B.full.d C:\msys64\home\Brendan-NewPc\cache-mem-profiling\bin\kernels.exe --kernel mul --size 256M --order stride --stride 1 --cpu 2 --reps 2 --ms 300 --label probe"
+Report Command:,"AMDuProfCLI.exe report -i C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\probe_0001.B.full.d\AMDuProf-kernels-Custom_Oct-23-2026_16-34-19"
+
+PROFILE DETAILS
+Profile Session Type:,"Custom Profile"
+Profile Scope:,"Single Application"
+CPU Mask:,"0-11"
+CPU Affinity Mask:,"0-11"
+Profile Start Time:,"Fri Oct 23 16:34:19 2026"
+Profile End Time:,"Fri Oct 23 16:34:21 2026"
+Profile Duration:,"1.551 seconds"
+Data Folder:,"C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\probe_0001.B.full.d\AMDuProf-kernels-Custom_Oct-23-2026_16-34-19"
+Virtual Machine:,"No"
+Call Stack Sampling:,"False"
+Selected View:,"All Events"
+
+MONITORED EVENTS
+PMC Events:,Name,Interval,Unitmask,Countmask,Invert Countmask,User,OS,Description
+,"CYCLES_NOT_IN_HALT (PMCx076)",250000,0x00,0x00,False,True,True,"The number of cpu cycles when the thread is not in halt state."
+,"L1_DEMAND_DC_REFILLS_LOCAL_L2 (PMCx043)",25000,0x01,0x00,False,True,True,"Counts all L2 Prefetches accepted by L2 pipeline which hit in the L2 Cache."
+,"L1_DEMAND_DC_REFILLS_LOCAL_CACHE (PMCx043)",25000,0x02,0x00,False,True,True,"The demand Data Cache (DC) fills from same the cache of same CCX or cache of different CCX in the same package (node)."
+,"L1_DTLB_MISSES (PMCx045)",25000,0xFF,0x00,False,True,True,"The L1 Data Translation Lookaside Buffer (DTLB) Misses from load store micro-ops. This predefined counts both L2-DTLB hit and L2-DTLB Miss."
+
+
+APPLICATION PERFORMANCE SNAPSHOT
+Thread Count,"5"
+
+
+"10 HOTTEST FUNCTIONS (Sort Event - CYCLES_NOT_IN_HALT)"
+FUNCTION,"CYCLES_NOT_IN_HALT","L1_DEMAND_DC_REFILLS_LOCAL_CACHE","L1_DEMAND_DC_REFILLS_LOCAL_L2","L1_DTLB_MISSES",Module
+"ntoskrnl.exe!0x1409ffe15",10.0000,0.0000,0.0000,0.0000,"c:\windows\system32\ntoskrnl.exe"
+"ntoskrnl.exe!0x1406c0a9c",4.0000,0.0000,0.0000,0.0000,"c:\windows\system32\ntoskrnl.exe"
+"farflt11.sys!0x140018829",3.0000,0.0000,1.0000,0.0000,"c:\windows\system32\drivers\farflt11.sys"
+"ntoskrnl.exe!0x14089cea5",2.0000,0.0000,0.0000,0.0000,"c:\windows\system32\ntoskrnl.exe"
+"ntdll.dll!0x18004652b",2.0000,0.0000,0.0000,0.0000,"c:\windows\system32\ntdll.dll"
+"ntoskrnl.exe!0x140887342",2.0000,0.0000,0.0000,0.0000,"c:\windows\system32\ntoskrnl.exe"
+"ntoskrnl.exe!0x14025e2a4",2.0000,0.0000,0.0000,0.0000,"c:\windows\system32\ntoskrnl.exe"
+"ntdll.dll!0x18012c5c2",1.0000,0.0000,0.0000,0.0000,"c:\windows\system32\ntdll.dll"
+"ntdll.dll!0x18005b3c0",1.0000,0.0000,0.0000,0.0000,"c:\windows\system32\ntdll.dll"
+"ntoskrnl.exe!0x140869655",1.0000,0.0000,0.0000,0.0000,"c:\windows\system32\ntoskrnl.exe"
+
+"10 HOTTEST PROCESSES (Sort Event - CYCLES_NOT_IN_HALT)"
+PROCESS,"CYCLES_NOT_IN_HALT","L1_DEMAND_DC_REFILLS_LOCAL_CACHE","L1_DEMAND_DC_REFILLS_LOCAL_L2","L1_DTLB_MISSES"
+"c:\msys64\home\brendan-newpc\cache-mem-profiling\bin\kernels.exe (PID:26956)",72.0000,1.0000,4.0000,2.0000
+
+"10 HOTTEST MODULES (Sort Event - CYCLES_NOT_IN_HALT)"
+MODULE,"CYCLES_NOT_IN_HALT","L1_DEMAND_DC_REFILLS_LOCAL_CACHE","L1_DEMAND_DC_REFILLS_LOCAL_L2","L1_DTLB_MISSES"
+"c:\windows\system32\ntoskrnl.exe",54.0000,0.0000,3.0000,2.0000
+"c:\windows\system32\ntdll.dll",10.0000,1.0000,0.0000,0.0000
+"c:\windows\system32\drivers\farflt11.sys",4.0000,0.0000,1.0000,0.0000
+"c:\windows\system32\drivers\ntfs.sys",2.0000,0.0000,0.0000,0.0000
+"c:\windows\system32\kernelbase.dll",1.0000,0.0000,0.0000,0.0000
+"c:\windows\system32\drivers\mbamchameleon.sys",1.0000,0.0000,0.0000,0.0000
+
+"10 HOTTEST THREADS (Sort Event - CYCLES_NOT_IN_HALT)"
+THREAD,"CYCLES_NOT_IN_HALT","L1_DEMAND_DC_REFILLS_LOCAL_CACHE","L1_DEMAND_DC_REFILLS_LOCAL_L2","L1_DTLB_MISSES",THREAD ID
+"Thread-8436 (PID:26956)",61.0000,1.0000,4.0000,2.0000,"8436"
+"Thread-28440 (PID:26956)",7.0000,0.0000,0.0000,0.0000,"28440"
+"Thread-42820 (PID:26956)",3.0000,0.0000,0.0000,0.0000,"42820"
+"Thread-50788 (PID:26956)",1.0000,0.0000,0.0000,0.0000,"50788"

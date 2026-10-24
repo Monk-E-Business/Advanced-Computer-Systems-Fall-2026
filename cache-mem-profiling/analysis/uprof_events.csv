@@ -1,0 +1,23 @@
+counter,priority,pattern,meaning_on_amd_zen
+# Maps the suite's counter columns to events in AMD uProf CPU-profile reports.
+# Pattern forms (tried in priority order per counter):
+#   =KEY + KEY   exact keys, summed. Keys are "PMCx<code>:<unit mask>" (from the report's
+#                MONITORED EVENTS section, e.g. PMCx043:0x08) or exact event names.
+#   anything else: a case-insensitive Python regex over event names (first match wins);
+#                names that look like derived metrics (rate/ratio/%/PTI/...) are skipped.
+# Codes/masks below are the ones uProf itself uses on Zen 2 (family 17h); event sets A/B
+# in scripts/lib.sh collect exactly these.
+cycles,1,=PMCx076:0x00,core cycles not halted
+cycles,2,CYCLES_NOT_IN_HALT|cycles.?not.?in.?halt|LsNotHaltedCyc,
+instructions,1,=PMCx0C0:0x00,retired instructions
+instructions,2,^RETIRED_INST(?!.*BR)|ExRetInstr,
+l1d_miss,1,=PMCx060:0xC8,L2 accesses caused by L1D misses (uProf's own L1D-miss definition; includes prefetches)
+l1d_miss,2,=L2_CACHE_ACCESS_FROM_L1_DC_MISS,
+llc_ref,1,=PMCx043:0x02 + PMCx043:0x08,demand L1D fills from L3/other cache + from DRAM = demand requests that missed L2 and reached the L3 (AMD's LLC)
+llc_ref,2,=L1_DEMAND_DC_REFILLS_LOCAL_CACHE + L1_DEMAND_DC_REFILLS_LOCAL_DRAM,
+llc_miss,1,=PMCx043:0x08,demand L1D fills from DRAM = L3 misses
+llc_miss,2,=L1_DEMAND_DC_REFILLS_LOCAL_DRAM,
+dtlb_ref,1,=PMCx029:0x07,load/store ops dispatched (L1D accesses)
+dtlb_ref,2,=L1_DC_ACCESSES_ALL,
+dtlb_miss,1,=PMCx045:0xF0,L2 DTLB misses = page-table walks
+dtlb_miss,2,=L2_DTLB_MISSES,

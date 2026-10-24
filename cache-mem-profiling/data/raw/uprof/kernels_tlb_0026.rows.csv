@@ -1,0 +1,2 @@
+tlb_kernel,kernel,saxpy,stride,1,4k,100663296,6291456,2,0,6,34851300,0.92324,25.9953,3.4443,0,1,nan,nan,nan,nan,nan,nan,nan
+tlb_kernel,kernel,saxpy,stride,1,4k,100663296,6291456,2,1,6,34788400,0.92158,26.0423,3.4443,0,1,nan,nan,nan,nan,nan,nan,nan

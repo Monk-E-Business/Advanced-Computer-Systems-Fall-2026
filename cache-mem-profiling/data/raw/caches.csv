@@ -1,0 +1,5 @@
+level,type,size_bytes,ways,line,shared_cpu_list
+1,Data,32768,8,64,"2-3"
+1,Instruction,32768,8,64,"2-3"
+2,Unified,524288,8,64,"2-3"
+3,Unified,16777216,16,64,"0-5"

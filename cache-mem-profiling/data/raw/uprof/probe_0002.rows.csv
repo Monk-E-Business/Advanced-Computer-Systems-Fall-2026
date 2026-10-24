@@ -1,0 +1,2 @@
+probe,kernel,mul,stride,512,4k,268435456,11184810,2,0,1,206168600,18.43291,1.3020,3.4706,0,1,nan,nan,nan,nan,nan,nan,nan
+probe,kernel,mul,stride,512,4k,268435456,11184810,2,1,1,204891400,18.31872,1.3101,3.4706,0,1,nan,nan,nan,nan,nan,nan,nan

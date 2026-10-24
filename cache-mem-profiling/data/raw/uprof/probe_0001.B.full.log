@@ -1,0 +1,13 @@
+probe,kernel,mul,stride,1,4k,268435456,11184810,2,0,21,315019000,1.34119,17.8946,3.5140,0,1,nan,nan,nan,nan,nan,nan,nan
+probe,kernel,mul,stride,1,4k,268435456,11184810,2,1,21,301235200,1.28250,18.7134,3.5140,0,1,nan,nan,nan,nan,nan,nan,nan
+Profiling started
+Profiling (data collection) completed 
+Generated data files path: C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\probe_0001.B.full.d\AMDuProf-kernels-Custom_Oct-23-2026_16-34-19
+Translation started 
+TRANSLATION PROGRESS: 40% Translation done TRANSLATION PROGRESS: 50% Translation done TRANSLATION PROGRESS: 60% Translation done TRANSLATION PROGRESS: 70% Translation done TRANSLATION PROGRESS: 80% Translation done TRANSLATION PROGRESS: 90% Translation done TRANSLATION PROGRESS: 100% Translation done TRANSLATION PROGRESS: 100% Translation done Translation finished: 
+Generated database file : callstack
+Generated database file : cpu
+Report generation started 
+Generating report file...
+Report generation completed...
+Generated report file: C:\msys64\home\Brendan-NewPc\cache-mem-profiling\data\raw\uprof\probe_0001.B.full.d\AMDuProf-kernels-Custom_Oct-23-2026_16-34-19\report.csv

@@ -1,0 +1,92 @@
+collected: 2026-10-23T19:20:32-0400  host: BRENDAN-DESKTOP  os-family: windows
+
+===== CPU / topology (bin/sysinfo) =====
+CPU:        AMD Ryzen 5 3600 6-Core Processor (AuthenticAMD)
+OS:         Windows 10.0 build 26200
+Logical:    12 CPUs on 6 physical cores (SMT on)
+Core types: uniform
+TSC rate:   3.593 GHz (~ nominal/base clock)
+Admin:      yes
+Large pages: ok (8 MiB test allocation, 8192 kB confirmed as large pages)
+Caches of CPU 0:
+  L1 Data              32 KiB   8-way  64 B lines  shared with CPUs 0-1
+  L1 Instruction       32 KiB   8-way  64 B lines  shared with CPUs 0-1
+  L2 Unified          512 KiB   8-way  64 B lines  shared with CPUs 0-1
+  L3 Unified        16384 KiB  16-way  64 B lines  shared with CPUs 0-5
+
+===== Logical CPUs (cpu,core,package,node,eff_class) =====
+cpu,core,package,node,eff_class
+0,0,0,0,0
+1,0,0,0,0
+2,1,0,0,0
+3,1,0,0,0
+4,2,0,0,0
+5,2,0,0,0
+6,3,0,0,0
+7,3,0,0,0
+8,4,0,0,0
+9,4,0,0,0
+10,5,0,0,0
+11,5,0,0,0
+
+===== Caches of measurement CPU 2 =====
+level,type,size_bytes,ways,line,shared_cpu_list
+1,Data,32768,8,64,"2-3"
+1,Instruction,32768,8,64,"2-3"
+2,Unified,524288,8,64,"2-3"
+3,Unified,16777216,16,64,"0-5"
+
+===== Windows =====
+Microsoft Windows 11 Pro 10.0.26200 build 26200
+Model: To Be Filled By O.E.M. To Be Filled By O.E.M.; RAM: 31.9 GiB; HypervisorPresent: False
+
+===== Memory modules (Speed = rated MT/s, ConfiguredClockSpeed = running MT/s) =====
+
+BankLabel    DeviceLocator Manufacturer PartNumber       GiB Speed ConfiguredClockSpeed SMBIOSMemoryType
+---------    ------------- ------------ ----------       --- ----- -------------------- ----------------
+P0 CHANNEL A DIMM 1        Unknown      F4-3200C16-16GVK  16  2667                 2667               26
+P0 CHANNEL B DIMM 1        Unknown      F4-3200C16-16GVK  16  2667                 2667               26
+
+
+
+Theoretical peak DRAM bandwidth = channels x MT/s x 8 B / 1000 (desktop/laptop: usually 2 channels).
+Set PEAK_GBPS=<value> before run_all.sh to enable the peak sanity check.
+
+===== Power / frequency policy =====
+Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)PERFBOOSTMODE (AC): 0x00000000  (0)
+PROCTHROTTLEMIN (AC): 0x00000064  (100)
+PROCTHROTTLEMAX (AC): 0x00000064  (100)
+PERFBOOSTMODE: 0 = boost disabled, 2 = aggressive (default). PROCTHROTTLE*: % of max clock.
+Win32_Processor: CurrentClockSpeed=3593 MHz MaxClockSpeed=3593 MHz
+
+===== Virtualisation-based security (Hyper-V under Windows changes timing and can block counters) =====
+VBS status: 0 (0 off, 1 enabled not running, 2 running); services running: 0
+
+===== Large pages =====
+admin terminal: 1
+large pages: ok (8 MiB test allocation, 8192 kB confirmed as large pages)
+
+===== Pinning / isolation =====
+measurement CPU=2  bandwidth CPUS=0,2,4,6,8,10  generators=0,4,6,8,10  NUMA node=0
+process priority: normal (export CMP_PRIORITY=high for HIGH_PRIORITY_CLASS)
+Windows has no isolcpus: close other programs; Task Manager shows background load.
+
+===== Tools =====
+build: date: 2026-10-23T19:20:28-04:00 target: windows cxx: g++ g++.exe (Rev4, Built by MSYS2 project) 16.2.0 cxxflags: -O2 -march=native -std=c++17 -Wall -Wextra -Wno-unused-parameter -Wa,-muse-unaligned-vector-move -D_WIN32_WINNT=0x0A00 ldflags: -static git: none 
+g++.exe (Rev4, Built by MSYS2 project) 16.2.0
+GNU Make 4.4.1
+MSYS2: MINGW64_NT-10.0-26200 BRENDAN-DESKTOP 3.6.10-c770e1b9.x86_64 2026-09-26 06:38 UTC x86_64 Msys
+mingw-w64-ucrt-x86_64-gcc 16.2.0-4
+mingw-w64-ucrt-x86_64-python 3.14.7-1
+mingw-w64-ucrt-x86_64-python-matplotlib 3.11.2-1
+mingw-w64-ucrt-x86_64-python-numpy 2.5.3-1
+mingw-w64-ucrt-x86_64-python-pandas 3.0.5-1
+Python 3.14.7
+numpy 2.5.3 pandas 3.0.5 matplotlib 3.11.2
+AMD uProf: /c/Program Files/AMD/AMDuProf/bin/AMDuProfCLI.exe (event sets: config:data_access)
+AMDuProfCLI.exe Version 5.3.521.0 
+counters: uprof
+
+===== Load at start =====
+CPU load: 4%
+finished: 2026-10-23T19:54:57-0400

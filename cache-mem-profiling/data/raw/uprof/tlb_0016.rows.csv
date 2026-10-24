@@ -1,0 +1,5 @@
+tlb,latency,page,large,65536,4096,1,2,0,178086956,204906600,1.1506,3.998,3.4745,55.6232,2048,1,nan,nan,nan,nan,nan,nan,nan
+tlb,latency,page,large,65536,4096,1,2,1,178086956,204589400,1.1488,3.992,3.4745,55.7095,2048,1,nan,nan,nan,nan,nan,nan,nan
+tlb,latency,page,large,65536,4096,1,2,2,178086956,204622900,1.1490,3.992,3.4745,55.7003,2048,1,nan,nan,nan,nan,nan,nan,nan
+tlb,latency,page,large,65536,4096,1,2,3,178086956,204681300,1.1493,3.993,3.4745,55.6844,2048,1,nan,nan,nan,nan,nan,nan,nan
+tlb,latency,page,large,65536,4096,1,2,4,178086956,204813700,1.1501,3.996,3.4745,55.6485,2048,1,nan,nan,nan,nan,nan,nan,nan

@@ -1,0 +1,5 @@
+tlb_kernel,kernel,mul,stride,512,4k,805306368,33554432,2,0,1,606035200,18.06126,1.3288,3.4705,0,1,nan,nan,nan,nan,nan,nan,nan
+tlb_kernel,kernel,mul,stride,512,4k,805306368,33554432,2,1,1,618610000,18.43601,1.3018,3.4705,0,1,nan,nan,nan,nan,nan,nan,nan
+tlb_kernel,kernel,mul,stride,512,4k,805306368,33554432,2,2,1,619097200,18.45053,1.3008,3.4705,0,1,nan,nan,nan,nan,nan,nan,nan
+tlb_kernel,kernel,mul,stride,512,4k,805306368,33554432,2,3,1,618254100,18.42541,1.3025,3.4705,0,1,nan,nan,nan,nan,nan,nan,nan
+tlb_kernel,kernel,mul,stride,512,4k,805306368,33554432,2,4,1,616923100,18.38574,1.3054,3.4705,0,1,nan,nan,nan,nan,nan,nan,nan

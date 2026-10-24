@@ -1,0 +1,76 @@
+collected: 2026-10-21T19:11:18-0400  host: vm  os-family: linux
+
+===== CPU / topology (bin/sysinfo) =====
+CPU:        Intel(R) Xeon(R) Processor @ 2.80GHz (GenuineIntel)
+OS:         Linux 6.18.44-fc-v139
+Logical:    2 CPUs on 2 physical cores (SMT off/none)
+Core types: uniform
+TSC rate:   2.800 GHz (~ nominal/base clock)
+Admin:      yes
+Large pages: ok (THP)
+Caches of CPU 0:
+  L1 Data              32 KiB   8-way  64 B lines  shared with CPUs 0
+  L1 Instruction       32 KiB   8-way  64 B lines  shared with CPUs 0
+  L2 Unified         1024 KiB  16-way  64 B lines  shared with CPUs 0
+  L3 Unified        33792 KiB  11-way  64 B lines  shared with CPUs 0-1
+
+===== Logical CPUs (cpu,core,package,node,eff_class) =====
+cpu,core,package,node,eff_class
+0,0,0,0,0
+1,1,0,0,0
+
+===== Caches of measurement CPU 1 =====
+level,type,size_bytes,ways,line,shared_cpu_list
+1,Data,32768,8,64,"1"
+1,Instruction,32768,8,64,"1"
+2,Unified,1048576,16,64,"1"
+3,Unified,34603008,11,64,"0-1"
+
+===== OS / kernel =====
+Linux vm 6.18.44-fc-v139 #1 SMP PREEMPT_DYNAMIC @0 x86_64 x86_64 x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+cmdline: mitigations=auto,no_guest_host,no_guest_guest deferred_init=lazy dhash_entries=131072 ihash_entries=65536 console=ttyS0 reboot=k panic=1 nomodule random.trust_cpu=1 ipv6.disable=1 swiotlb=noforce psi=1 rdinit=/process_api -- --firecracker-init --addr 0.0.0.0:2024 --max-ws-buffer-size 32768 --block-local-connections --control-vsock-port 5001 --listen-vsock-port 2024 --log-vsock-port 5002
+
+===== Memory =====
+MemTotal:        8222320 kB
+MemFree:         5862624 kB
+MemAvailable:    7477428 kB
+Buffers:           14640 kB
+Cached:          1805640 kB
+DIMM details: run 'sudo dmidecode -t memory' (speed/channels give theoretical peak bandwidth)
+
+===== NUMA =====
+numactl not installed
+
+===== Frequency policy =====
+driver:   n/a
+governor: n/a
+intel no_turbo: n/a   cpufreq boost: n/a
+
+===== SMT =====
+control: notsupported  active: 0
+
+===== Huge pages =====
+THP enabled: always [madvise] never
+nr_hugepages (2M hugetlbfs): 0
+
+===== Isolation / pinning plan =====
+isolcpus: none
+measurement CPU=1  bandwidth CPUS=0,1  generators=0  NUMA node=0  NUMACTL=''
+
+===== Tools =====
+build: date: 2026-10-21T19:10:43-04:00 target: linux cxx: g++ g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0 cxxflags: -O2 -march=native -std=c++17 -Wall -Wextra -Wno-unused-parameter -pthread ldflags:  git: none 
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Python 3.13.16
+numpy 2.5.3 pandas 3.0.5 matplotlib 3.11.2
+perf_event_paranoid: 2
+
+===== Virtualisation =====
+docker
+
+===== Load at start =====
+ 19:11:19 up 29 min,  0 user,  load average: 0.65, 0.37, 0.24
+finished: 2026-10-21T19:16:29-0400

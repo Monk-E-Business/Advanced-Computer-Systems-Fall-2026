@@ -1,0 +1,54 @@
+
+List of predefined profiles that can be used with 'collect --config' option:
+
+  tbp          : Time-based Sampling
+                 Use this configuration to identify where programs are spending time.
+  
+                 
+
+  hotspots     : Hotspots
+                 Use this configuration to identify where programs are spending time and 
+                 it's callstack. 
+
+  memory       : Cache Analysis
+                 Use this configuration to identify the false cache-line sharing issues. 
+                 The profile data will be collected using IBS OP.
+
+  inst_access  : Investigate Instruction Access
+                 Use this configuration to find instruction fetches with poor L1 instruction 
+                 cache locality and poor ITLB behavior.
+                 [PMU Events: PMCx076, PMCx0C0, PMCx060, PMCx064, PMCx084, PMCx085, PMCx094]
+
+  ibs          : Instruction-based Sampling
+                 Use this configuration to collect profile data using instruction-based 
+                 sampling. Samples are attributed to instructions precisely with IBS.
+
+  energy       : Energy Profile
+                 Use this configuration to identify where programs are consuming energy.
+
+  data_access  : Investigate Data Access
+                 Use this configuration to find data access operations with poor L1 data 
+                 cache locality and poor DTLB behavior.
+                 [PMU Events: PMCx076, PMCx0C0, PMCx029, PMCx060, PMCx043, PMCx047, PMCx045]
+
+  cpi          : Investigate CPI
+                 Basic profile type to analyse the CPI and IPC metrics of the running application 
+                 or the entire system.
+                 [PMU Events: PMCx076, PMCx0C0]
+
+  branch       : Investigate Branching
+                 Use this configuration to find poorly predicted branches and near returns.
+                 [PMU Events: PMCx076, PMCx0C0, PMCx0C2, PMCx0C3, PMCx0C4, PMCx0C5, PMCx0C8, PMCx0C9, 
+                              PMCx0CA, PMCx08A, PMCx08B]
+
+  assess_ext   : Assess Performance (Extended)
+                 This configuration has additional events to monitor than the Assess Performance 
+                 configuration. Use this configuration to get an overall assessment of performance.
+                 [PMU Events: PMCx076, PMCx0C0, PMCx0C2, PMCx0C3, PMCx029, PMCx060, PMCx043, PMCx047, 
+                              PMCx024, PMCx052, PMCx00E, PMCx061]
+
+  assess       : Assess Performance
+                 Use this configuration to get an overall assessment of performance and 
+                 to find potential issues for investigation.
+                 [PMU Events: PMCx076, PMCx0C0, PMCx0C2, PMCx0C3, PMCx029, PMCx060, PMCx043, PMCx047]
+

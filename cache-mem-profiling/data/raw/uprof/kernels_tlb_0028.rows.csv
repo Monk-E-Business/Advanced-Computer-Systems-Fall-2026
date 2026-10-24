@@ -1,0 +1,2 @@
+tlb_kernel,kernel,saxpy,rand,1,4k,100663296,6291456,2,0,1,86601600,13.76495,2.0342,3.4275,0,1,nan,nan,nan,nan,nan,nan,nan
+tlb_kernel,kernel,saxpy,rand,1,4k,100663296,6291456,2,1,1,86726700,13.78484,2.0312,3.4275,0,1,nan,nan,nan,nan,nan,nan,nan
